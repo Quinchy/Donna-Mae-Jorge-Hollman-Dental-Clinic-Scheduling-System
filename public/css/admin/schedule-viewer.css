@@ -1,0 +1,178 @@
+.main-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 22rem;
+    margin-top: 1rem;
+}
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: white;
+    gap: 1rem;
+    border-radius: 0.9375rem;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
+    height: 53rem;
+    width: 74.9rem;
+    padding: 1rem;
+}
+.calendar-header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 4rem;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.date-indicator-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.appointment-column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.sunday-appointment-container,
+.monday-appointment-container,
+.tuesday-appointment-container,
+.wednesday-appointment-container,
+.thursday-appointment-container,
+.friday-appointment-container,
+.saturday-appointment-container {
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-family: 'Roboto Condensed', sans-serif;
+    gap: 1rem;
+    background: #F2F2F2;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 6.3rem;
+    width: 70.5rem;
+}
+.date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+.weekday-appointment-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.weekday-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+.weekday{
+    margin: 0;
+    color: #0a7f9cda;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    writing-mode: sideways-lr;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.week-number {
+    margin: 0;
+    color: #0a7f9c;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.appointment-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    overflow-y: auto;
+    gap: 0.25rem;
+    height: 100px;
+}
+.appointment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+    background-color: #0A7F9C;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 10rem;
+}
+.appointment-id {
+    margin: 0;
+}
+.patient-name {
+    margin: 0;
+}
+.time-slot {
+    margin: 0;
+}
+.service {
+    margin: 0;
+}
+.line2 {
+    height: 1.5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 0.1rem;
+    margin: 0;
+}
+.time-service-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+}
+.appointment-calendar-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #0A7F9C;
+}
+.start-date {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #0A7F9C;
+}
+.line {
+    height: 2.3px;
+    width: 1rem;
+    background-color: #0A7F9C;
+    border-radius: 0.1rem;
+}
+.end-date {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #0A7F9C;
+}
+.previous-button,
+.next-button {
+    border: none;
+    background-color: #00000000;
+    cursor: pointer;
+}
+.previous-button:disabled {
+    cursor: not-allowed;
+}
+.previous-button:disabled svg path {
+    stroke: #8fbeca;
+}

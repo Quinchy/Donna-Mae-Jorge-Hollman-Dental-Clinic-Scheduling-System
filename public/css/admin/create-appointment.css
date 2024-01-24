@@ -1,0 +1,312 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 22rem;
+    margin-top: 2.25rem;
+    gap: 2rem;
+}
+.create-appointment-main-container {
+    background-color: white;
+    border-radius: 0.9375rem;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    height: 47.5rem;
+    width: 92rem;
+}
+.create-appointment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+}
+.title {
+    color: #0A7F9C;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+.heading-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.scheduler-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2rem;
+    gap: 5rem;
+}
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+}
+.schedule-title {
+    color: #0A7F9C;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.45rem 0 0 0;
+}
+.custom-radio {
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 1rem;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.custom-radio label {
+    padding: 1rem;
+    color: #A5D1DC;
+    border: solid 1px #A5D1DC;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .2s ease-in-out;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+}
+.custom-radio input[type="radio"] {
+    display: none;
+}
+.custom-radio input[type="radio"]:disabled + label {
+    cursor: default;
+    color: #8D8D8D;
+    border-color: #8D8D8D;
+    opacity: 0.5;
+}
+.custom-radio input[type="radio"]:checked + label {
+    border-color: #0A7F9C;
+    border-width: 1.5px;
+    color: #0A7F9C;
+}
+.flatpickr-input {
+    display: none !important;
+}
+.placeholder-text {
+    color: #8D8D8D;
+    margin-right: -4.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.service-container {
+    align-items: center;
+    justify-content: center;
+}
+.setting-description {
+    background-color: #0A7F9C; 
+    border-radius: 15px 15px 0px 0px;
+    min-width: 230px;
+    width: 100% !important;
+    max-width: 480px;
+
+}
+.description {
+    font-size: 12px;
+    margin-left: 5px !important;
+    letter-spacing: 0.8px;
+    padding-bottom: 10px;
+    font-family: Arial !important;
+    margin: 0;
+}
+.setting-description-text {
+    padding-top: 10px !important;
+    color: #ffffff;
+}
+.wrapper-dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 231.5px;
+    width: 100% !important;
+    max-width: 483px;
+    padding: 0px 0px 0px 0px;
+    min-height: 35px;
+    border-radius: 0px 0px 15px 15px;
+    background: #0A7F9C;
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 10px;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+.arrow {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+    rotate: 180deg;
+}
+.selected-display {
+    margin-left: 20px;
+}
+svg {
+    transition: all 0.3s;
+}
+.wrapper-dropdown::before {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -2px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+.rotated {
+    transform: rotate(-180deg);
+}
+.wrapper-dropdown .dropdown {
+    transition: 0.3s;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 99;
+    border-radius: 15px;
+    box-shadow: inherit;
+    background: inherit;
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+}
+.wrapper-dropdown .dropdown li {
+    padding: 0 15px;
+    line-height: 45px;
+    overflow: hidden;
+}
+.wrapper-dropdown .dropdown li:last-child {
+    border-bottom: none;
+}
+.dropdown {
+    padding: 0.5rem !important;
+}
+.wrapper-dropdown .dropdown li:hover {
+    background-color: #17a8cc;
+    border-radius: 10px;
+}
+.wrapper-dropdown.active .dropdown {
+    opacity: 1;
+    visibility: visible;
+    border-radius: 15px;
+}
+.wrapper-dropdown .dropdown{
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.booked {
+    color: grey;
+    pointer-events: none;
+}
+.personal-info-title {
+    font-size: 1.75rem;
+    margin: 0;
+}
+.service-title {
+    font-size: 1.75rem;
+    margin: 0;
+}
+.schedule-time-title {
+    font-size: 1.75rem;
+    margin: 0;
+}
+.personal-info-input {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 15rem;
+    padding: 0.45rem;
+    border: 1px solid #0A7F9C;
+    border-radius: 0.3rem;
+}
+.personal-info-input:focus {
+    outline: 1px solid #17a8cc;
+}
+.personal-input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.personal-information-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+.schedule-service-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+.service-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+.personal-info-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.create-appointment-button {
+    height: 3rem;
+    width: 14rem;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    color: white;
+    background-color: #0A7F9C;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+} 
+.create-appointment-button:hover {
+    background-color: #17a8cc;
+}
+.warning-sign {
+    display: flex;
+    background-color: #9c0a0a;
+    width: fit-content;
+    color: white;
+    gap: 1rem;
+    padding: 0.25rem 1rem 0.25rem 1rem; 
+    border-radius: 1rem;
+}
+.alert-success {
+    display: flex;
+    background-color: #0a9c11;
+    color: white;
+    width: fit-content;
+    gap: 1rem;
+    padding: 0.25rem 1rem 0.25rem 1rem; 
+    border-radius: 1rem;
+}
+.title-warning-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}

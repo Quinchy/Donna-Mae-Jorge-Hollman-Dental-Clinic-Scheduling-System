@@ -1,0 +1,282 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 22rem;
+    margin-top: 2.25rem;
+    gap: 2rem;
+}
+.heading-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title {
+    color: #0A7F9C;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+.search-container{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 39rem;
+}
+input#search-bar{
+    width: 30rem;
+    height: 3rem;
+    padding: 0 50px 0 20px;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+    border: 1px solid #979797;
+    outline: none;
+    &:focus {
+        border: 1px solid #0A7F9C;
+        transition: 0.35s ease;
+        color: black;
+        &::-webkit-input-placeholder{
+        transition: opacity 0.45s ease; 
+            opacity: 0;
+        }
+        &::-moz-placeholder {
+        transition: opacity 0.45s ease; 
+            opacity: 0;
+        }
+        &:-ms-placeholder {
+        transition: opacity 0.45s ease; 
+            opacity: 0;
+        }    
+    }
+}
+.search-icon {
+    position: relative;
+    float: right;
+    width: 2rem;
+    top: 0;
+    right: 45px;
+}
+.appointment-cards-container {
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    gap: 1rem;
+}
+.appointment-card {
+    border-radius: 0.9375rem;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+    gap: 60.5rem;
+    justify-content: space-between;
+}
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+}
+.information-title {
+    margin: 0;
+    font-weight: 600;
+}
+.content {
+    font-weight: 400;
+}
+.content1 {
+    font-weight: 400;
+    color: #56AB00;
+}
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+.done-button {
+    border-radius: 0.3125rem;
+    background: #56AB00;
+    width: 7rem;
+    height: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.done-button:hover {
+    background: #6ecf00;
+}
+.reschedule-button {
+    border-radius: 0.3125rem;
+    background: #0A569C;
+    width: 7rem;
+    height: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.reschedule-button:hover {
+    background: #0a6fc0;
+}
+.delete-button {
+    border-radius: 0.3125rem;
+    background: #E84545;
+    width: 7rem;
+    height: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.delete-button:hover {
+    background: #ff5b5b;
+}
+.view-button {
+    width: 7rem;
+    height: 1.5rem;
+    color: #0A7F9C;
+    background-color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.view-button:hover {
+    color: #17a8cc;
+}
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 79rem;
+}
+.pagination-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.page-indicator {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.previous-button {
+    border-radius: 0.625rem;
+    border: 1px solid #000;
+    background: #FFF;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.previous-button:disabled {
+    border: 1px solid #979797;
+}
+.previous-button:disabled svg path {
+    stroke:#979797;
+}
+.next-button {
+    border-radius: 0.625rem;
+    border: 1px solid #000;
+    background: #FFF;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.next-button:disabled {
+    border: 1px solid #979797;
+}
+.next-button:disabled svg path {
+    stroke:#979797;
+}
+.no-appointments {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #979797;
+    padding-top: 17rem;
+    padding-left: 31rem;
+}
+.cancelled {
+    color: #E84545;
+}
+.done {
+    color: #6ecf00;
+}
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    width: 50%;
+    margin: 15% auto;
+}
+.modal-title {
+    margin: 0;
+}
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.modal-body p {
+    margin: 0;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.search-button {
+    background-color: #00000000;
+    border: none;
+    cursor: pointer;
+}

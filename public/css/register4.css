@@ -1,0 +1,134 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8.5rem 0 11rem 0;
+    gap: 2.5rem;
+}
+.progress-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.milestone-1 {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 2.5rem;
+    background: #0A7F9C;
+}
+.road-1 {
+    width: 16.1875rem;
+    height: 0.1875rem;
+    background: #0A7F9C;
+}
+.milestone-2 {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 2.5rem;
+    background: #0A7F9C;
+}
+.road-2 {
+    width: 16.1875rem;
+    height: 0.1875rem;
+    background: #0A7F9C;
+}
+.milestone-3 {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 2.5rem;
+    background: #0A7F9C;
+}
+.road-3 {
+    width: 16.1875rem;
+    height: 0.1875rem;
+    background: #0A7F9C;
+}
+.milestone-4 {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 2.5rem;
+    background: #0A7F9C;
+}
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.9375rem;
+    border: 1px solid rgba(10, 127, 156, 0.50);
+    background: #F2F2F2;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.10);
+    width: 38rem;
+    height: 40rem;
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 2rem;
+}
+.register-heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.register-title {
+    color: #0A7F9C;
+    font-family: 'Roboto';
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+}
+.register-description {
+    color: #858585;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140.625%;
+    margin: 0;
+    padding: 0 5rem 0 5rem;
+}
+.book-appointment-button {
+    border-radius: 0.3125rem;
+    background: #0A7F9C;
+    width: 20rem;
+    height: 2.7rem;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book-appointment-button:hover {
+    background: #17a8cc;
+}
+.book-appointment-button:focus {
+    background-color: #004f63;
+}
+.go-home-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3125rem;
+    outline: 2px solid #0A7F9C;
+    color: #0A7F9C;
+    height: 2.5rem;
+    width: 20rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.go-home-link:hover {
+    color: #17a8cc;
+    outline-color: #17a8cc;
+}
