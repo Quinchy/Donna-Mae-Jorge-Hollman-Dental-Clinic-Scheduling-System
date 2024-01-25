@@ -6,14 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('time_slots', function (Blueprint $table) {
             $table->id();
-            $table->time('time_slot')->unique();
+            $table->time('time_slot');
             $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('time_slots');

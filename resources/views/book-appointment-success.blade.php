@@ -13,4 +13,4 @@
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/book-appointment-success.css') }}">
-@endsection
+@endsectionD

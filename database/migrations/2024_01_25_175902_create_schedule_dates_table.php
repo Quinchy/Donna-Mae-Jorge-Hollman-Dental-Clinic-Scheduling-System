@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('schedule_dates', function (Blueprint $table) {
@@ -14,9 +17,14 @@ return new class extends Migration
             $table->unsignedBigInteger('time_slots_id');
             $table->boolean('booked')->default(false);
             $table->timestamps();
+
             $table->foreign('time_slots_id')->references('id')->on('time_slots');
         });
     }
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('schedule_dates');
