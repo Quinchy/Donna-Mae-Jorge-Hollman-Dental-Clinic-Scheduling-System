@@ -14,12 +14,12 @@
     </div>
     <div class="about-container" id="about-section" data-aos="fade-up" data-aos-offset="500" data-aos-duration="1500">
         <div class="about-1-container">
-            <p class="about-title">Welcome to Smile Dental Care Clinic, where your smile is our top priority.</p>
+            <p class="about-title">Welcome to Donna Mae Jorge-Hollman Dental Clinic, where your smile is our top priority.</p>
             <img data-aos="fade-right" data-aos-easing="linear" data-aos-offset="100" data-aos-duration="500" src="{{ asset('img/Line-Decoration.png')}}" alt="">
         </div>
         <div class="about-2-container">
             <img class="about-img" data-aos="flip-right" data-aos-offset="100" data-aos-duration="1500" src="{{ asset('img/About-Image-Decoration.png')}}" alt="">
-            <p class="about-2-subtitle">At Smile Dental Care Clinic, we are dedicated to providing personalized and gentle care. Our team of experienced professionals uses the latest technology to ensure the best dental health for you and your family. Experience a welcoming environment where every visit leaves you with a brighter smile.</p>
+            <p class="about-2-subtitle">At Donna Mae Jorge-Hollman Dental Clinic, we are dedicated to providing personalized and gentle care. Our team of experienced professionals uses the latest technology to ensure the best dental health for you and your family. Experience a welcoming environment where every visit leaves you with a brighter smile.</p>
             <div data-aos="fade-right" data-aos-offset="100" data-aos-duration="5500" class="about-link-container">
                 <a class="about-link" href="{{ route('about') }}">LEARN MORE ABOUT US</a>
                 <img src="{{ asset('img/Arrow-Right.svg')}}" alt="">
