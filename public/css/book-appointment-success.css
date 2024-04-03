@@ -55,3 +55,26 @@
     width: 20rem;
     font-weight: 500;
 }
+
+@media screen and (max-width: 768px) { 
+    .appointment-card-container {
+        border-radius: 0.9rem;
+        width: 24rem;
+        gap: 1.5rem;
+    }
+    .booking-success-heading-container {
+        gap: 1rem;
+    }
+    .booking-success-title {
+        font-size: 1.5rem;
+    }
+    .booking-success-description {
+        font-size: 0.85rem;
+    }
+    .go-appointments-link {
+        font-size: 0.85rem;
+        width: 15rem;
+        font-weight: 500;
+        margin-top: 2rem;
+    }
+}

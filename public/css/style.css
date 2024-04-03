@@ -52,6 +52,9 @@ a {
 .mobile-navbar {
     display: none;
 }
+.sidebar {
+    display: none;
+}
 .navbar {
     position: fixed;
     z-index: 1000;
@@ -195,6 +198,53 @@ a {
         max-width: 100vw;
         overflow-x: hidden; /* Prevent horizontal scrolling */
     }
+    .close-sidebar {
+        position: absolute;
+        float: right; 
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+        background-color: #00000000;
+        padding: 0;
+        border: none;
+    }
+    .sidebar {
+        display: block;
+        position: fixed;
+        left: -100vw;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: #0a7f9c85;
+        backdrop-filter: blur(15px) brightness(100%);
+        transition: left 0.3s;
+        z-index: 1000;
+    }
+    .sidebar-navigations {
+        list-style-type: none;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 4rem;
+        margin-right: 1rem;
+        gap: 2.5rem;
+        align-items: center;
+    }
+    .sidebar-navigation-link-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .sidebar ul li a {
+        font-family: 'Roboto';
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    .sidebar.active {
+        left: 0; 
+    }
     .navbar {
         display: none;
     }
@@ -230,19 +280,34 @@ a {
     .footer {
         flex-direction: column;
         align-items: center;
-        gap: 5rem;
+        gap: 3rem;
         height: 100%;
     }
     .footer-menu-container {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
     .footer-logo-container {
-        margin: 0 5rem 0 5rem;
+        margin: 0 3.2rem 0 3.2rem;
     }
     .copyright {
         text-align: center;
+        font-size: 0.85rem;
     }
     .contact-footer-container {
         align-items: center;
+        gap: 0.5rem;
+    }
+    .footer-subtitle-container {
+        gap: 0.25rem;
+    }
+    .footer-title {
+        font-size: 0.85rem;
+    }
+    .footer-subtitle {
+        font-size: 0.85rem;
+    }
+    .contact-icon {
+        width: 15px;
+        height: 15px;
     }
 }

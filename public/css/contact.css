@@ -131,3 +131,65 @@
 .contact-input2:focus {
     outline: 1px solid #17a8cc;
 }
+@media screen and (max-width: 768px) { 
+    .main-container {
+        gap: 5rem;
+    }
+    .contact-title {
+        font-size: 5rem;
+        letter-spacing: -0.1rem;
+        width: 23rem;
+    }
+    .contact-container {
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+        width: 24rem;
+        border-radius: 0.3rem;
+    }
+    .contact-form-container {
+        width: 20rem;
+        gap: 2.5rem;
+        padding-top: 0;
+    }
+    .contact-form-title {
+        font-size: 1.25rem;
+    }
+    .contact-form-subtitle {
+        font-size: 0.85rem;
+    }
+    .contact-information-container {
+        gap: 0.25rem;
+    }
+    .contact-icon {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+    .contact-content {
+        font-size: 0.85rem;
+    }
+    .contact-input-container1 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .contact-input {
+        font-size: 0.85rem;
+        height: 1.25rem;
+        width: 18rem;
+    }
+    .contact-input2 {
+        font-size: 0.85rem;
+        height: 1.25rem;
+        width: 18rem;
+    }
+    .contact-textarea {
+        font-size: 0.85rem;
+        width: 18rem;
+    }
+    .send-button {
+        width: 19rem;
+        font-size: 0.85rem;
+    }
+    .contact-map-image {
+        height: 28rem;
+    }
+}

@@ -291,3 +291,95 @@ svg {
     color: grey;
     pointer-events: none;
 }
+
+@media screen and (max-width: 768px) { 
+    .appointment-page-title {
+        font-size: 2.1rem;
+    }
+    .appointment-card-container {
+        width: 20rem;
+        gap: 3rem;
+        padding: 2rem;
+    }
+    .appointment-date-section {
+        gap: 0.25rem;
+    }
+    .appointment-date-title {
+        font-size: 1.25rem;
+    }
+    .appointment-date-subtitle {
+        font-size: 0.85rem;
+    }
+    .scheduler-container {
+        flex-direction: column;
+        gap: 0rem;
+        align-items: center;
+    }
+    .schedule-title {
+        margin: 0;
+    }
+    .appointment-service-section {
+        gap: 0.5rem;
+    }
+    .appointment-service-title {
+        font-size: 1.25rem;
+    }
+    .appointment-service-subtitle {
+        font-size: 0.85rem;
+    }
+    .submit-container {
+        margin-right: 0;
+    }
+    .submit-button {
+        font-size: 0.85rem;
+    }
+    .placeholder-text {
+        margin-right: -4rem;
+        font-size: 0.85rem;
+    }
+    .setting-description {
+        background-color: #0A7F9C; 
+        border-radius: 9px 9px 0px 0px;
+        min-width: 230px;
+        width: 100% !important;
+        max-width: 480px;
+    }
+    .time-slot-adder-container {
+        margin-top: 1rem;
+    }
+    .wrapper-dropdown {
+        border-radius: 0px 0px 9px 9px;
+    }
+    .selected-display {
+        font-size: 1rem;
+    }
+    .wrapper-dropdown .dropdown {
+        border-radius: 5px;
+        box-shadow: inherit;
+        background: inherit;
+        -webkit-transform-origin: top;
+        -moz-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .dropdown {
+        padding: 0.3rem !important;
+    }
+    .wrapper-dropdown.active .dropdown {
+        border-radius: 9px;
+    }
+    .wrapper-dropdown .dropdown{
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .warning-text {
+        border-radius: 0.25rem;
+    }
+}

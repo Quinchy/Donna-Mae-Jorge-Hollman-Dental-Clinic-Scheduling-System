@@ -274,3 +274,51 @@
     line-height: normal;
     margin: 0;
 }
+@media screen and (max-width: 768px) { 
+    .road-1 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .road-2 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .road-3 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .register-container {
+        width: 20rem;
+        height: 35rem;
+        border-radius: 0.75rem;
+        padding: 0 2rem 0 2rem;
+        gap: 1rem;
+    }
+    .register-heading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .register-title {
+        font-size: 1.5rem;
+    }
+    .register-description {
+        font-size: 0.85rem;
+    }
+    .register-description2 {
+        font-size: 0.85rem;
+        padding: 1rem 1.5rem 0 1.5rem;
+    }
+    .verification-code-container {
+        padding: 0 0 2rem 0;
+    }
+    .verify-button {
+        width: 21rem;
+        font-size: 0.85rem;
+    }
+    .resend-button {
+        width: 21rem;
+        font-size: 0.85rem;
+    }
+}

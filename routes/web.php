@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\ScheduleViewerController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ContactController;
 
-// Non Authenticated Routes
+// User Routes
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -47,17 +47,14 @@ Route::get('/register-step3', function () {
 Route::get('/register-step4', function () {
     return view('registration.register-step4');
 })->middleware('check-step-completion')->name('register.step4');
-// Google Login Routes
 Route::get('/auth/redirect', [GoogleAuthController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('/auth/google/callback',[GoogleAuthController::class, 'handleGoogleCallback']);
-// Route Post
 Route::post('/login/post', [LoginController::class, 'loginUser'])->name('login.post');
 Route::post('/register/step1', [RegistrationController::class, 'storeRegisterData'])->name('register.step1.post');
 Route::post('/register/verify-code', [RegistrationController::class, 'verifyCode'])->name('register.verify-code');
 Route::post('/register/resend-code', [RegistrationController::class, 'resendVerificationCode'])->name('register.resend-code');
 Route::post('/register/step3', [RegistrationController::class, 'registerData'])->name('register.step3.post');
 Route::post('/send-contact-mail', [ContactController::class, 'sendMail'])->name('send.contact.mail');
-// User Authenticated Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/account', [UserController::class, 'loadAccount'])->name('account');
     Route::get('/my-appointment', [AppointmentController::class, 'appointmentStatus'])->name('load-appointment-status');
@@ -72,13 +69,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/account/save', [UserController::class, 'saveAccount'])->middleware('auth')->name('account.save');
 });
 
+
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::middleware('guest:admin')->group(function () {
-        Route::get('login', function() {
-            return view('admin.admin-login');
-        })->name('login.admin');
-    });
+    Route::get('login', function() {
+        return view('admin.admin-login');
+    })->name('login.admin');
     // Admin Authenticated Routes
     Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('schedule-viewer', function () {

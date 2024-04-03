@@ -45,13 +45,13 @@
 .login-section-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1.5rem;
 }
 .login-form-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1.5rem;
 }
 .register-link {
@@ -149,6 +149,7 @@
 .login-button {
     border-radius: 0.3125rem;
     background: #0A7F9C;
+    width: 27.5rem;
     height: 2.7rem;
     color: #FFF;
     text-align: center;
@@ -173,9 +174,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 0.3125rem;
-    border: 2px solid #0A7F9C;
+    border: 1px solid #0A7F9C;
     height: 2.5rem;
     gap: 0.5rem;
+    width: 27.2rem;
     flex-shrink: 0;
 }
 .google-logo-text {
@@ -197,4 +199,57 @@
     font-weight: 400;
     line-height: normal;
     margin: 0;
+}
+@media screen and (max-width: 768px) {
+    .login-container {
+        border-radius: 0.7rem;
+        width: 24rem;
+        height: 35rem;
+    }
+    .login-title {
+        font-size: 1.5rem;
+    }
+    .login-description {
+        font-size: 0.85rem;
+    }
+    .login-section-container {
+        gap: 1rem;
+    }
+    .login-form-container {
+        gap: 1rem;
+    }
+    .register-link {
+        font-size: 0.85rem;
+    }
+    .email-textfield {
+        width: 17rem;
+    }
+    .password-textfield {
+        width: 17rem;
+    }
+    .password-textfield:focus {
+        outline-color: #004f63;
+    }
+    .email-title {
+        font-size: 0.85rem;
+    }
+    .password-title {
+        font-size: 0.85rem;
+    }
+    .separator-text {
+        font-size: 0.85rem;
+    }
+    .line {
+        width: 6.3rem;
+    }
+    .login-button {
+        font-size: 0.85rem;
+        width: 20.9rem;
+    }
+    .google-button {
+        width: 20.9rem;
+    }
+    .google-logo-text {
+        font-size: 0.95rem;
+    }
 }

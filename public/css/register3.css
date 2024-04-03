@@ -97,7 +97,7 @@
 .register-form-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1.5rem;
 }
 .first-name-container {
@@ -182,6 +182,7 @@
     border-radius: 0.3125rem;
     background: #0A7F9C;
     height: 2.7rem;
+    width: 27.5rem;
     color: #FFF;
     text-align: center;
     font-family: Roboto;
@@ -209,4 +210,59 @@
     font-weight: 400;
     line-height: normal;
     margin: 0;
+}
+@media screen and (max-width: 768px) { 
+    .road-1 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .road-2 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .road-3 {
+        width: 5rem;
+        height: 0.15rem;
+    }
+    .register-container {
+        width: 20rem;
+        height: 35rem;
+        border-radius: 0.75rem;
+        padding: 0 2rem 0 2rem;
+        gap: 1rem;
+    }
+    .register-heading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .register-title {
+        font-size: 1.5rem;
+    }
+    .register-description {
+        font-size: 0.85rem;
+    }
+    .first-name-title {
+        font-size: 0.85rem;
+    }
+    .first-name-textfield {
+        width: 17rem;
+    }
+    .last-name-title {
+        font-size: 0.85rem;
+    }
+    .last-name-textfield {
+        width: 17rem;
+    }
+    .phone-number-title {
+        font-size: 0.85rem;
+    }
+    .phone-number-textfield {
+        width: 17rem;
+    }
+    .submit-button {
+        width: 21rem;
+        font-size: 0.85rem;
+    }
 }

@@ -35,7 +35,7 @@
         </div>
         <div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-duration="1500" class="view-service-container">
             <a class="view-service-link" href="{{ route('service')}}">VIEW SERVICES</a>
-            <img src="{{ asset('img/LineDraw.svg')}}" alt="">
+            <img class="draw-line" src="{{ asset('img/LineDraw.svg')}}" alt="">
         </div>
     </div>
 </div>

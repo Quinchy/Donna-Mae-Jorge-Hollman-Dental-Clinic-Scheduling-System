@@ -150,3 +150,71 @@
     transition: all 0.3s ease;
     transform: translateX(0.5rem); ;
 }
+
+@media screen and (max-width: 768px) { 
+    .main-container {
+        gap: 10rem;
+    }
+    .about-title-section-container {
+        gap: 2rem;
+    }
+    .about-title {
+        font-size: 5rem;
+        letter-spacing: -0.1rem;
+    }
+    .line {
+        width: 0.125rem;
+        height: 10rem;
+        background: rgba(255, 255, 255, 0.50);
+    }
+    .about-first-section-container {
+        gap: 2rem;
+        margin-top: 15rem;
+        width: 23rem;
+    }
+    .first-section-title {
+        font-size: 2.5rem;
+    }
+    .first-section-subtitle {
+        font-size: 0.85rem;
+    }
+    .book-appointment-link {
+        width: 20rem;
+        margin-top: 2.5rem;
+    }
+    .about-second-section-container {
+        gap: 2rem;
+        width: 23rem;
+    }
+    .second-section-title {
+        font-size: 2rem;
+    }
+    .second-section-subtitle {
+        font-size: 0.85rem;
+    }
+    .about-card-section-container {
+        width: 23rem;
+        gap: 5rem;
+    }
+    .card-container {
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .about-card-title {
+        font-size: 2rem;
+    }
+    .about-card-subtitle {
+        font-size: 0.85rem;
+        margin: 0;
+    }
+    .view-service-container {
+        margin-top: 5rem;
+        gap: 1rem;
+    }
+    .view-service-link {
+        font-size: 2rem;
+    }
+    .draw-line {
+        width: 15rem;
+    }
+}

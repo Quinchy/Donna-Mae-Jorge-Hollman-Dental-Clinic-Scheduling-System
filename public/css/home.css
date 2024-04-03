@@ -288,13 +288,14 @@
         margin: 0 3rem 0 3rem;
     }
     .intro-subtitle {
-        font-size: 1rem;
+        font-size: 0.85rem;
         margin: 0 1rem 0 1rem;
     }
     .about-2-container {
         align-items: center;
     }
     .about-2-subtitle {
+        font-size: 0.85rem;
         text-align: center;
     }
     .service-cards-title-container {
@@ -314,7 +315,7 @@
         flex-direction: column;
         align-items: center;
         margin: 2rem;
-        gap: 8rem;
+        gap: 2rem;
     }
     .about-img,
     .service-img {
@@ -334,8 +335,15 @@
     .contact-link {
         font-size: 1rem;
     }
+    .services-link-container {
+        margin-top: 2rem;
+    }
+    .contact-link-container {
+        margin-top: 2rem;
+    }
     .card-container {
         flex-direction: column;
+        gap: 5rem;
     }
     .card-number {
         width: 4rem;
@@ -343,17 +351,26 @@
         font-size: 2rem;
     }
     .card-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         text-align: center;
     }
     .linebreak {
         display: none;
     }
+    .service-cards {
+        gap: 1rem;
+    }
+    .service-cards-title-container {
+        gap: 1rem;
+    }
     .service-card-subtitle {
-        font-size: 1rem;
+        font-size: 0.85rem;
         text-align: center;
     }
     .contact-section-container {
         margin-bottom: 15rem;
+    }
+    .contact-subtitle {
+        font-size: 0.85rem;
     }
 }
