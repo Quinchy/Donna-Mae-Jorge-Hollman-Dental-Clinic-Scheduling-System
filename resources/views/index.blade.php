@@ -1,12 +1,12 @@
 @extends('layouts.main')
 @section('content')
 <div class="main-container">
-    <div class="intro-container" data-aos="fade-up" data-aos-offset="500" data-aos-duration="1500">
+    <div class="intro-container">
         <h1 class="intro-title">Where <span class="intro-title-highlight">Beautiful Smiles</span> Begin.</h1>
         <p class="intro-subtitle">Gentle, compassionate care | Advanced technology | Convenient scheduling.</p>
         <div class="intro-button-container">
             <a class="book-appointment-container" href="{{ route('book-appointment')}}">BOOK AN APPOINTMENT</a>
-            <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-duration="1500" class="learn-more-container">
+            <div class="learn-more-container">
                 <a class="learn-more-link" href="#about-section">Learn More</a>
                 <img src="{{ asset('img/Arrow-Down.svg') }}" alt="">
             </div>

@@ -212,6 +212,9 @@
     margin: 0;
 }
 @media screen and (max-width: 768px) { 
+    .main-container {
+        margin: 6rem 0 11rem 0;
+    }
     .road-1 {
         width: 5rem;
         height: 0.15rem;
@@ -225,11 +228,9 @@
         height: 0.15rem;
     }
     .register-container {
-        width: 20rem;
-        height: 35rem;
-        border-radius: 0.75rem;
-        padding: 0 2rem 0 2rem;
-        gap: 1rem;
+        border-radius: 0.5rem;
+        width: 22rem;
+        height: 32rem;
     }
     .register-heading-container {
         display: flex;
@@ -241,28 +242,31 @@
         font-size: 1.5rem;
     }
     .register-description {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .first-name-title {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .first-name-textfield {
-        width: 17rem;
+        font-size: 0.875rem;
+        width: 15.2rem;
     }
     .last-name-title {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .last-name-textfield {
-        width: 17rem;
+        font-size: 0.875rem;
+        width: 15.2rem;
     }
     .phone-number-title {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .phone-number-textfield {
-        width: 17rem;
+        font-size: 0.875rem;
+        width: 15.2rem;
     }
     .submit-button {
-        width: 21rem;
+        width: 19rem;
         font-size: 0.85rem;
     }
 }

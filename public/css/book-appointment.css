@@ -65,7 +65,7 @@
     margin: 0.45rem 0 0 0;
 }
 .custom-radio {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     margin: 0;
     padding: 1rem;
     list-style-type: none;
@@ -293,11 +293,14 @@ svg {
 }
 
 @media screen and (max-width: 768px) { 
+    .main-container {
+        margin: 6rem 0 11rem 0;
+    }
     .appointment-page-title {
         font-size: 2.1rem;
     }
     .appointment-card-container {
-        width: 20rem;
+        width: 18rem;
         gap: 3rem;
         padding: 2rem;
     }
@@ -305,15 +308,16 @@ svg {
         gap: 0.25rem;
     }
     .appointment-date-title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     .appointment-date-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .scheduler-container {
         flex-direction: column;
         gap: 0rem;
         align-items: center;
+        margin-left: -0.6rem;
     }
     .schedule-title {
         margin: 0;
@@ -322,20 +326,20 @@ svg {
         gap: 0.5rem;
     }
     .appointment-service-title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     .appointment-service-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .submit-container {
         margin-right: 0;
     }
     .submit-button {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .placeholder-text {
         margin-right: -4rem;
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .setting-description {
         background-color: #0A7F9C; 

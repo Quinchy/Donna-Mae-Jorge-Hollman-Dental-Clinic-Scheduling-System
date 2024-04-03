@@ -57,10 +57,14 @@
 }
 
 @media screen and (max-width: 768px) { 
+    .main-container {
+        margin: 6rem 0 11rem 0;
+    }
     .appointment-card-container {
-        border-radius: 0.9rem;
-        width: 24rem;
-        gap: 1.5rem;
+        width: 18rem;
+        height: 28rem;
+        gap: 3rem;
+        padding: 2rem;
     }
     .booking-success-heading-container {
         gap: 1rem;
@@ -69,12 +73,13 @@
         font-size: 1.5rem;
     }
     .booking-success-description {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
+        padding: 0 2rem 0 2rem;
     }
     .go-appointments-link {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         width: 15rem;
         font-weight: 500;
-        margin-top: 2rem;
+        margin-top: 1.25rem;
     }
 }

@@ -163,6 +163,10 @@
     color: #17a8cc;
 }
 @media screen and (max-width: 768px) { 
+    .main-container {
+        margin: 6rem 0 11rem 0;
+        gap: 2rem;
+    }
     .account-page-title {
         font-size: 3rem;
     }
@@ -178,8 +182,8 @@
         font-size: 0.85rem;
     }
     .account-card-container {
-        width: 21rem;
-        padding: 1.5rem;
+        width: 18rem;
+        padding: 2rem;
         gap: 2rem;
     }
     .my-appointment-title {

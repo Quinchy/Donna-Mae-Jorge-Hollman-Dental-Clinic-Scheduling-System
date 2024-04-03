@@ -20,7 +20,7 @@
                         <input type="text" id="calendarInline" class="flatpickr-calendar animate inline" placeholder="Select Date">
                     </div>
                     <div class="schedule-list">
-                        <h1 class="schedule-title">Available Schedule</h1>
+                        <h1 class="schedule-title">Available Time Slot</h1>
                         <div class="time-slot-container">
                             <ul class="custom-radio">
                                 <p class="placeholder-text">Please pick a date.</p>

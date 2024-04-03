@@ -12,16 +12,16 @@
     </div>
     <div class="register-container">
         <div class="register-heading-container">
-            <h1 class="register-title">PLEASE VERIFY YOUR EMAIL</h1>
-            <p class="register-description">You're almost there! We sent a <b>code</b> into your email.</p>
+            <h1 class="register-title">VERIFY YOUR EMAIL</h1>
+            <p class="register-description">We sent a <b>code</b> into your email.</p>
             <p class="register-description2">Please check your email immediately and write the confirmation code below. If you don't see it, you may <b>check your spam</b> folder.</p>
         </div>
+        <div class="warning-text">
+            @foreach ($errors->all() as $error)
+                <span>{{ $error }}</span><br>
+            @endforeach
+        </div>
         <form class="register-form-container" method="POST" action="{{ route('register.verify-code') }}">
-            <div class="warning-text">
-                @foreach ($errors->all() as $error)
-                    <span>{{ $error }}</span><br>
-                @endforeach
-            </div>
             @csrf
             <div class="verification-code-container">
                 <input class="verification-code-input" id="digit-1" name="digit-1" type="number" maxlength="1" oninput="moveToNext(this, 'digit-2')" autofocus>

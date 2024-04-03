@@ -4,7 +4,7 @@
     <div class="login-container">
         <div class="login-heading-container">
             <h1 class="login-title">LOGIN</h1>
-            <p class="login-description">Are you new to Smile Dental Care? <a class="register-link" href="{{ route('register.step1') }}">Create an Account</a></p>
+            <p class="login-description">Are you new to our Dental Clinic? <a class="register-link" href="{{ route('register.step1') }}">Create an Account</a></p>
         </div>
         <div class="login-section-container">
             <form class="login-form-container" method="POST" action="{{ route('login.post')}}">
@@ -40,7 +40,7 @@
                 <p class="separator-text">or continue with</p>
                 <div class="line"></div>
             </div>
-            <a class="google-button" href="{{ route('google.login') }}"><img src="{{ asset('img/Google.svg')}}" alt=""><p class="google-logo-text">Google</p></a>
+            <a class="google-button" href="{{ route('google.login') }}"><img class="google-logo" src="{{ asset('img/Google.svg')}}" alt=""><p class="google-logo-text">Google</p></a>
         </div>
     </div>
 </div>

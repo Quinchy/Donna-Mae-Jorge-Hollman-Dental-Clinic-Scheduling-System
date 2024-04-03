@@ -201,16 +201,20 @@
     margin: 0;
 }
 @media screen and (max-width: 768px) {
+    .main-container {
+        margin: 6rem 0 11rem 0;
+    }
     .login-container {
-        border-radius: 0.7rem;
-        width: 24rem;
-        height: 35rem;
+        border-radius: 0.5rem;
+        width: 22rem;
+        height: 32rem;
     }
     .login-title {
         font-size: 1.5rem;
     }
     .login-description {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
+        margin: 0 4rem 0 4rem;
     }
     .login-section-container {
         gap: 1rem;
@@ -219,37 +223,40 @@
         gap: 1rem;
     }
     .register-link {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .email-textfield {
-        width: 17rem;
+        width: 15.2rem;
+        font-size: 0.875rem;
     }
     .password-textfield {
-        width: 17rem;
-    }
-    .password-textfield:focus {
-        outline-color: #004f63;
+        width: 15.2rem;
+        font-size: 0.875rem;
     }
     .email-title {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .password-title {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .separator-text {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
     .line {
-        width: 6.3rem;
+        width: 5.3rem;
     }
     .login-button {
-        font-size: 0.85rem;
-        width: 20.9rem;
+        font-size: 0.875rem;
+        width: 19rem;
     }
     .google-button {
-        width: 20.9rem;
+        width: 19rem;
+    }
+    .google-logo {
+        height: 0.875rem;
+        width: 0.875rem;
     }
     .google-logo-text {
-        font-size: 0.95rem;
+        font-size: 0.875rem;
     }
 }

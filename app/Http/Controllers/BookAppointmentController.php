@@ -14,12 +14,19 @@ class BookAppointmentController extends Controller
 {
     public function submitAppointment(Request $request) {
         // Validate request data
+        $customMessages = [
+            'appointment_date.required' => 'Please select an appointment date.',
+            'appointment_date.date' => 'The appointment date must be a valid date.',
+            'appointment_date.exists' => 'The selected appointment date is not available.',
+            'appointment_service.required' => 'Please select a service.',
+            'appointment_service.exists' => 'The selected service is not available.',
+            'time_slot.required' => 'Please select a time slot.',
+        ];
         $validatedData = $request->validate([
             'appointment_date' => 'required|date|exists:schedule_dates,appointment_date',
             'appointment_service' => 'required|exists:services,name',
-            'time_slot' => 'required'
-        ]);
-    
+            'time_slot' => 'required',
+        ], $customMessages);
         $userId = auth()->id();
         $serviceId = Service::where('name', $validatedData['appointment_service'])->first()->id;
         $formattedTimeSlot = date("G:i", strtotime($validatedData['time_slot']));

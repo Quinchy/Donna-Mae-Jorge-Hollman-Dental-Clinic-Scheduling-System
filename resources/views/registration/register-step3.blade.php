@@ -15,12 +15,12 @@
             <h1 class="register-title">PERSONAL DETAILS</h1>
             <p class="register-description">Please provide your personal information below.</p>
         </div>
+        <div class="warning-text">
+            @foreach ($errors->all() as $error)
+                <span>{{ $error }}</span><br>
+            @endforeach
+        </div>
         <form class="register-form-container" method="POST" action="{{ route('register.step3.post') }}">
-            <div class="warning-text">
-                @foreach ($errors->all() as $error)
-                    <span>{{ $error }}</span><br>
-                @endforeach
-            </div>
             @csrf
             <div class="first-name-container">
                 <label class="first-name-title" for="first_name">First Name</label>

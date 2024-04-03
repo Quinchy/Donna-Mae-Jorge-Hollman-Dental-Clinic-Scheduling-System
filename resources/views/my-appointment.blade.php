@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="main-container">
-    <h1 class="account-page-title">My Appointment</h1>
+    <h1 class="account-page-title">Appointment</h1>
     <div class="link-container">
         <a class="account-link" href="{{ route('account')}}">Account</a>
         <a class="appointment-link" href="{{ route('load-appointment')}}">Appointment</a>

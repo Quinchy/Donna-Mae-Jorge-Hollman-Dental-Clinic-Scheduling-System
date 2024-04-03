@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="main-container">
-    <h1 class="account-page-title">My Account</h1>
+    <h1 class="account-page-title">Account</h1>
     <div class="link-container">
         <a class="account-link" href="{{ route('account')}}">Account</a>
         <a class="appointment-link" href="{{ route('load-appointment')}}">Appointment</a>
@@ -16,7 +16,6 @@
                 @endforeach
             </div>
             <div class="information-container">
-                <h1 class="account-data-title">Account Data</h1>
                 <div class="name-container">
                     <div class="input-container">
                         <label class="input-label" for="first_name">First Name</label>

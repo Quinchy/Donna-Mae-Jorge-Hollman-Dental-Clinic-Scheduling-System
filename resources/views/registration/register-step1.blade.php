@@ -16,12 +16,12 @@
             <p class="register-description">Already have an account? <a class="login-link" href="{{ route('login') }}">Login your Account</a></p>
         </div>
         <div class="register-section-container">
+            <div class="warning-text">
+                @foreach ($errors->all() as $error)
+                    <span>{{ $error }}</span><br>
+                @endforeach
+            </div>
             <form class="register-form-container" method="POST" action="{{ route('register.step1.post') }}">
-                <div class="warning-text">
-                    @foreach ($errors->all() as $error)
-                        <span>{{ $error }}</span><br>
-                    @endforeach
-                </div>
                 @csrf
                 <div class="email-container">
                     <label class="email-title" for="email">Email</label>
