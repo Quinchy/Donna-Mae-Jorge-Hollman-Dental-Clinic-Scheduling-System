@@ -19,16 +19,16 @@
                 <div class="name-container">
                     <div class="input-container">
                         <label class="input-label" for="first_name">First Name</label>
-                        <input class="text-input" type="text" name="first_name" id="first_name" value="{{ $user->userInformation->first_name ?? '' }}" {{ $user->isLoggedInWithGoogle() ? 'disabled' : '' }}>
+                        <input class="text-input" type="text" name="first_name" id="first_name" value="{{ $user->userInformation->first_name ?? '' }}">
                     </div>
                     <div class="input-container">
                         <label class="input-label" for="last_name">Last Name</label>
-                        <input class="text-input" type="text" name="last_name" id="last_name" value="{{ $user->userInformation->last_name ?? '' }}" {{ $user->isLoggedInWithGoogle() ? 'disabled' : '' }}>
+                        <input class="text-input" type="text" name="last_name" id="last_name" value="{{ $user->userInformation->last_name ?? '' }}">
                     </div>
                 </div>
                 <div class="input-container">
                     <label class="input-label" for="email">Email</label>
-                    <input class="text-input" type="text" name="email" id="email" value="{{ $user->email }}" {{ $user->isLoggedInWithGoogle() ? 'disabled' : '' }}>
+                    <input class="text-input" type="text" name="email" id="email" value="{{ $user->email }}">
                 </div>
                 <div class="phone-input-container">
                     <label class="phone-input-label" for="phone_number">Phone Number</label>
