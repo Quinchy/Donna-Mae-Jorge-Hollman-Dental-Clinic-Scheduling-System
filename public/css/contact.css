@@ -133,17 +133,18 @@
 }
 @media screen and (max-width: 768px) { 
     .main-container {
-        gap: 5rem;
+        gap: 3rem;
     }
     .contact-title {
         font-size: 5rem;
         letter-spacing: -0.1rem;
+        margin: 6rem 0 0 0;
         width: 23rem;
     }
     .contact-container {
         flex-direction: column-reverse;
         gap: 2.5rem;
-        width: 24rem;
+        width: 22rem;
         border-radius: 0.3rem;
     }
     .contact-form-container {
@@ -174,22 +175,22 @@
     .contact-input {
         font-size: 0.85rem;
         height: 1.25rem;
-        width: 18rem;
+        width: 19rem;
     }
     .contact-input2 {
         font-size: 0.85rem;
         height: 1.25rem;
-        width: 18rem;
+        width: 19rem;
     }
     .contact-textarea {
         font-size: 0.85rem;
-        width: 18rem;
+        width: 19rem;
     }
     .send-button {
-        width: 19rem;
+        width: 20rem;
         font-size: 0.85rem;
     }
     .contact-map-image {
-        height: 28rem;
+        height: 25.7rem;
     }
 }

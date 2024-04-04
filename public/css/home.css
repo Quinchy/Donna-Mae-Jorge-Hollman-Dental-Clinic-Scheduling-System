@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15rem 30rem 0 30rem;
+    margin: 13rem 30rem 0 30rem;
     gap: 2.5rem;
 }
 .intro-title {
@@ -94,9 +94,9 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 0 14rem 0 14rem;
+    margin: 0 15rem 0 15rem;
     padding-top: 15rem;
-    gap: 16rem;
+    gap: 5rem;
 }
 .about-title {
     font-family: 'Roboto Condensed';
@@ -143,7 +143,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 14rem 0 14rem;
+    margin: 0 15rem 0 15rem;
     gap: 2.5rem;
 }
 .services-title {
@@ -223,7 +223,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 0 14rem 30rem 14rem;
+    margin: 0 15rem 30rem 15rem;
     gap: 10rem;
 }
 .contact-section-container {
@@ -285,17 +285,17 @@
     }
     .intro-title {
         font-size: 2.6rem;
-        margin: 0 3rem 0 3rem;
+        margin: 0 2.4rem 0 2.4rem;
     }
     .intro-subtitle {
         font-size: 0.85rem;
-        margin: 0 1rem 0 1rem;
+        margin: 0 2rem 0 2rem;
     }
     .about-2-container {
         align-items: center;
     }
     .about-2-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         text-align: center;
     }
     .service-cards-title-container {
@@ -322,18 +322,18 @@
         width: 75%; /* Adjust image sizes for mobile */
     }
     .about-title {
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: left;
     }
     .services-title,
     .contact-title {
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: center;
     }
     .about-link,
     .services-link,
     .contact-link {
-        font-size: 1rem;
+        font-size: 0.875rem;
     }
     .services-link-container {
         margin-top: 2rem;
@@ -351,7 +351,7 @@
         font-size: 2rem;
     }
     .card-title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         text-align: center;
     }
     .linebreak {
@@ -364,13 +364,13 @@
         gap: 1rem;
     }
     .service-card-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         text-align: center;
     }
     .contact-section-container {
         margin-bottom: 15rem;
     }
     .contact-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
 }
