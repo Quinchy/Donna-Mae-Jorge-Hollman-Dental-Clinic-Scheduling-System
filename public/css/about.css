@@ -24,6 +24,7 @@
     width: 0.125rem;
     height: 10.0625rem;
     background: rgba(255, 255, 255, 0.50);
+    transition: all 1s ease-in-out;
 }
 .about-first-section-container {
     display: flex;
@@ -167,6 +168,7 @@
         width: 0.125rem;
         height: 10rem;
         background: rgba(255, 255, 255, 0.50);
+        transition: all 1s ease-in-out;
     }
     .about-first-section-container {
         gap: 2rem;

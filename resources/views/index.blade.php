@@ -75,9 +75,3 @@
 @section('css')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
-@section('js')
-    <script src="{{ asset('js/lib/aos.js')}}"></script>
-    <script>
-        AOS.init();
-    </script>
-@endsection

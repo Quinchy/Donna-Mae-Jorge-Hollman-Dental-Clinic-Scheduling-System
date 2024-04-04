@@ -44,9 +44,7 @@
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
 @endsection
 @section('js')
-    <script src="{{ asset('js/lib/aos.js')}}"></script>
     <script>
-        AOS.init();
         var lastScrollTop = 0;
         document.addEventListener('scroll', function() {
             var line = document.querySelector('.line');

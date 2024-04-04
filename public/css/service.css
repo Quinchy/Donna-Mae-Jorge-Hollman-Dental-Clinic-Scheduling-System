@@ -26,6 +26,7 @@
     width: 0.125rem;
     height: 10.0625rem;
     background: rgba(255, 255, 255, 0.50);
+    transition: all 1s ease-in-out;
 }
 
 .service-first-section-container {
@@ -129,6 +130,7 @@
         width: 0.125rem;
         height: 10rem;
         background: rgba(255, 255, 255, 0.50);
+        transition: all 1s ease-in-out;
     }
     .service-first-section-container {
         gap: 2rem;
@@ -136,17 +138,18 @@
         width: 23rem;
     }
     .first-section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .first-section-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
+        margin: 0 1.5rem 0 1.5rem;
     }
     .service-list-section-container {
         gap: 5rem;
         width: 23rem;
     }
     .service-list-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .service-card {
         gap: 1rem;
@@ -179,7 +182,7 @@
         font-size: 2.5rem;
     }
     .service-card-description {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         line-height: 1.5rem;
     }
 }
