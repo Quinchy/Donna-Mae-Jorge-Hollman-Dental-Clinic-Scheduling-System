@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="logo-container">
         <img src="{{ asset('img/AdminLogo.png')}}" alt="">
-        <p class="logo-title">Donna Mae Jorge-Hollman <br> Dental Clinic Administrator</p>
+        <p class="logo-title">Donna Mae Jorge-Hollman <br> Dental Clinic Admin</p>
     </div>
     <ul class="acc-menu">
         <a href="{{ route('admin.schedule-viewer')}}" {{ Request::routeIs('admin.schedule-viewer') ? 'style=text-decoration:underline;' : '' }}>

@@ -50,7 +50,7 @@ class AppointmentRequestController extends Controller
         $appointmentRequests = $appointmentRequests->orderBy('schedule_dates.appointment_date', 'asc')
                                                     ->orderBy('time_slots.time_slot', 'asc')
                                                     ->select('appointments.*') // Select only columns from appointments table
-                                                    ->paginate(4);
+                                                    ->paginate(7);
         return view('admin.appointment-request-manager', compact('appointmentRequests'));
     }    
 }

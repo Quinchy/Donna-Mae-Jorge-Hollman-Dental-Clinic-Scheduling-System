@@ -12,25 +12,49 @@
         @forelse ($appointmentHistory as $history)
         <div class="appointment-card">
             <div class="information">
-                <p class="information-title">Appointment ID: <span class="content">{{ $history->appointment_id }}</span></p>
-                <p class="information-title">Patient Name: <span class="content">{{ $history->user->userInformation->first_name }}</span></p>
-                <p class="information-title">Schedule: <span class="content">{{ $history->scheduleDate->appointment_date }} {{ date('g:i A', strtotime($history->scheduleDate->timeSlot->time_slot)) }}</span></p>
-                <p class="information-title">Service: <span class="content">{{ $history->service->name }}</span></p>
-                <p class="information-title">Status: <span class="content1 {{ $history->status == 'Cancelled' ? 'cancelled' : ($history->status == 'Done' ? 'done' : '') }}">{{ $history->status}}</span></p>
+                <div>
+                    <p class="information-title">Appointment ID:</p>
+                    <span class="content">{{ $history->appointment_id }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Patient Name:</p>
+                    <span class="content">{{ $history->user->userInformation->first_name }} {{ $history->user->userInformation->last_name }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Schedule:</p>
+                    <span class="content">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $history->scheduleDate->appointment_date)->format('F j, Y') }} at {{ date('g:i A', strtotime($history->scheduleDate->timeSlot->time_slot)) }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Service:</p>
+                    <span class="content">{{ $history->service->name }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Status:</p>
+                    <span class="content1 {{ $history->status == 'Cancelled' ? 'cancelled' : ($history->status == 'Done' ? 'done' : '') }}">{{ $history->status}}</span>
+                </div>
             </div>
             <div class="buttons-container">
+                <button class="view-button" onclick="showModal({{ $history->id }})">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg> 
+                </button>
                 <form action="{{ route('admin.appointment-history.delete', $history->id) }}" method="POST">
                     @csrf
-                    <button class="delete-button">Delete</button>
+                    <button class="delete-button">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                        </svg>                          
+                    </button>
                 </form>
-                <button class="view-button" onclick="showModal({{ $history->id }})">More Details</button>
             </div>
         </div>
         @empty
             <p class="no-appointments">You have no history of Appointments.</p>
         @endforelse
     </div>
-    @if ($appointmentHistory->total() > 4)
+    @if ($appointmentHistory->total() > 7)
     <div class="pagination-container">
         <p class="page-indicator">Page {{ $appointmentHistory->currentPage() }} of {{ $appointmentHistory->lastPage() }}</p>
         <div class="pagination-button-container">
@@ -43,7 +67,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="appointmentDetailsModalLabel">Appointment Details</h5>
-                    <button type="button" class="close" onclick="closeModal()">&times;</button>
+                    <button type="button" class="close" onclick="closeModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="modal-body">
                     
@@ -72,15 +101,22 @@ function showModal(appointmentId) {
         const userInformation = data.userInformation;
         const schedule = data.schedule;
         const timeSlot = convertTimeTo12Hour(data.timeSlot);
-        // Build HTML content with the appointment details
+        const scheduleDate = new Date(schedule); // Assuming 'schedule' is in the format 'YYYY-MM-DD'
+        const formattedDate = scheduleDate.toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        });
+        const formattedTimeSlot = timeSlot; // Assuming 'timeSlot' is already in a human-readable format like '8:00 AM'
+
         const detailsHtml = `
-            <p>Appointment ID: ${appointment.appointment_id}</p>
-            <p>Patient Name: ${userInformation.first_name} ${userInformation.last_name || ""}</p>
-            <p>Schedule: ${schedule} ${timeSlot}</p>
-            <p>Phone Number: ${userInformation.phone_number || ""}</p>
-            <p>Service: ${appointment.service.name}</p>
-            <p>Email: ${appointment.user.email}</p>
-            <p>Status: <span class="${appointment.status.toLowerCase()}">${appointment.status}</span></p>
+            <div><span class="label-bold">Appointment ID:</span> ${appointment.appointment_id}</div>
+            <div><span class="label-bold">Patient Name:</span> ${userInformation.first_name} ${userInformation.last_name || ""}</div>
+            <div><span class="label-bold">Schedule:</span> ${formattedDate} at ${formattedTimeSlot}</div>
+            <div><span class="label-bold">Phone Number:</span> ${userInformation.phone_number || ""}</div>
+            <div><span class="label-bold">Service:</span> ${appointment.service.name}</div>
+            <div><span class="label-bold">Email:</span> ${appointment.user.email}</div>
+            <div><span class="label-bold">Status:</span> <span class="${appointment.status.toLowerCase()}">${appointment.status}</span></div>
         `;
         document.querySelector('#appointmentDetailsModal .modal-body').innerHTML = detailsHtml;
         document.getElementById('appointmentDetailsModal').style.display = 'block';

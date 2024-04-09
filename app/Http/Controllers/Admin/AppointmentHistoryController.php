@@ -31,11 +31,12 @@ class AppointmentHistoryController extends Controller
     public function loadAppointmentHistory(Request $request) {
         $searchQuery = $request->query('search');
         $appointmentHistory = Appointment::with(['scheduleDate.timeSlot', 'service', 'user.userInformation'])
-                                    ->where('status', 'Cancelled');
+                                        ->whereIn('status', ['Cancelled', 'Done'])
+                                        ->orderBy('created_at', 'desc');
         if (!empty($searchQuery)) {
             $appointmentHistory = $appointmentHistory->where('appointment_id', 'LIKE', '%' . $searchQuery . '%');
         }
-        $appointmentHistory = $appointmentHistory->paginate(4);
+        $appointmentHistory = $appointmentHistory->paginate(7);
         return view('admin.appointment-history', compact('appointmentHistory'));
     }
 }

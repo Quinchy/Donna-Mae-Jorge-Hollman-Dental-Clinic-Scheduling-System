@@ -12,30 +12,67 @@
         @forelse ($appointmentList as $list)
         <div class="appointment-card">
             <div class="information">
-                <p class="information-title">Appointment ID: <span class="content">{{ $list->appointment_id }}</span></p>
-                <p class="information-title">Patient Name: <span class="content">{{ $list->user->userInformation->first_name }} {{ $list->user->userInformation->last_name }}</span></p>
-                <p class="information-title">Schedule: <span class="content">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $list->scheduleDate->appointment_date)->format('F j, Y') }} at {{ date('g:i A', strtotime($list->scheduleDate->timeSlot->time_slot)) }}</span></p>
-                <p class="information-title">Service: <span class="content">{{ $list->service->name }}</span></p>
-                <p class="information-title">Status: <span class="content1">{{ $list->status}}</span></p>
+                <div>
+                    <p class="information-title">Appointment ID:</p>
+                    <span class="content">{{ $list->appointment_id }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Patient Name:</p>
+                    <span class="content">{{ $list->user->userInformation->first_name }} {{ $list->user->userInformation->last_name }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Schedule:</p>
+                    <span class="content">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $list->scheduleDate->appointment_date)->format('F j, Y') }} at {{ date('g:i A', strtotime($list->scheduleDate->timeSlot->time_slot)) }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Service:</p>
+                    <span class="content">{{ $list->service->name }}</span>
+                </div>
+                <div>
+                    <p class="information-title">Status:</p>
+                    <span class="content1">{{ $list->status }}</span>
+                </div>
             </div>
             <div class="buttons-container">
                 <form action="{{ route('admin.appointment-manager.done', $list->id) }}" method="POST">
                     @csrf
-                    <button class="done-button">Done</button>
+                    <button class="done-button">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                        </svg>   
+                        Done
+                    </button>
                 </form>
-                <button class="reschedule-button" onclick="showRescheduleModal('{{ $list->id }}', '{{ \Carbon\Carbon::createFromFormat('Y-m-d', $list->scheduleDate->appointment_date)->format('F j, Y') }}', '{{ date('g:i A', strtotime($list->scheduleDate->timeSlot->time_slot)) }}')">Reschedule</button>
+                <button onclick="showRescheduleModal('{{ $list->id }}', '{{ \Carbon\Carbon::createFromFormat('Y-m-d', $list->scheduleDate->appointment_date)->format('F j, Y') }}', '{{ date('g:i A', strtotime($list->scheduleDate->timeSlot->time_slot)) }}')" class="reschedule-button">
+                    <div class="button-icon">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                    </div>                    
+                    Reschedule
+                </button>
                 <form action="{{ route('admin.appointment-manager.cancel', $list->id) }}" method="POST">
                     @csrf
-                    <button class="cancel-button">Cancel</button>
+                    <button class="cancel-button">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                        </svg>     
+                        Cancel
+                    </button>
                 </form>
-                <button class="view-button" onclick="showViewModal({{ $list->id }})">More Details</button>
+                <button class="view-button" onclick="showViewModal({{ $list->id }})">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>                                         
+                </button>
             </div>
         </div>
         @empty
             <p class="no-appointments">You have no Appointments.</p>
         @endforelse
     </div>
-    @if ($appointmentList->total() > 4)
+    @if ($appointmentList->total() > 7)
         <div class="pagination-container">
             <p class="page-indicator">Page {{ $appointmentList->currentPage() }} of {{ $appointmentList->lastPage() }}</p>
             <div class="pagination-button-container">
@@ -48,7 +85,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="appointmentDetailsModalLabel">Appointment Details</h5>
-                    <button type="button" class="close" onclick="closeModal()">&times;</button>
+                    <button type="button" class="close" onclick="closeModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="modal-body">
                     
@@ -67,7 +109,12 @@
                     <div class="reschedule-modal-titles-container">
                         <h1 class="reschedule-modal-title">Appointment Reschedule</h1>
                     </div>
-                    <button type="button" class="close" onclick="closeRescheduleModal()">&times;</button>
+                    <button type="button" class="close" onclick="closeRescheduleModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="current-schedule-container">
                     <h1 class="current-schedule-date-title">Current Appointment Date: </h1>
@@ -183,14 +230,22 @@
             const userInformation = data.userInformation;
             const schedule = data.schedule;
             const timeSlot = convertTimeTo12Hour(data.timeSlot);
+            const scheduleDate = new Date(schedule); // Assuming 'schedule' is in the format 'YYYY-MM-DD'
+            const formattedDate = scheduleDate.toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            });
+            const formattedTimeSlot = timeSlot; // Assuming 'timeSlot' is already in a human-readable format like '8:00 AM'
+
             const detailsHtml = `
-                <p>Appointment ID: ${appointment.appointment_id}</p>
-                <p>Patient Name: ${userInformation.first_name} ${userInformation.last_name || ""}</p>
-                <p>Schedule: ${schedule} ${timeSlot}</p>
-                <p>Phone Number: ${userInformation.phone_number || ""}</p>
-                <p>Service: ${appointment.service.name}</p>
-                <p>Email: ${appointment.user.email}</p>
-                <p>Status: <span class="${appointment.status.toLowerCase()}">${appointment.status}</span></p>
+                <div><span class="label-bold">Appointment ID:</span> ${appointment.appointment_id}</div>
+                <div><span class="label-bold">Patient Name:</span> ${userInformation.first_name} ${userInformation.last_name || ""}</div>
+                <div><span class="label-bold">Schedule:</span> ${formattedDate} at ${formattedTimeSlot}</div>
+                <div><span class="label-bold">Phone Number:</span> ${userInformation.phone_number || ""}</div>
+                <div><span class="label-bold">Service:</span> ${appointment.service.name}</div>
+                <div><span class="label-bold">Email:</span> ${appointment.user.email}</div>
+                <div><span class="label-bold">Status:</span> <span class="${appointment.status.toLowerCase()}">${appointment.status}</span></div>
             `;
             document.querySelector('#appointmentDetailsModal .modal-body').innerHTML = detailsHtml;
             document.getElementById('appointmentDetailsModal').style.display = 'block';

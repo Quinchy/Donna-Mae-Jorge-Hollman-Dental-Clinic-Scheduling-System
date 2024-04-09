@@ -59,50 +59,59 @@ input#search-bar{
 .appointment-cards-container {
     display: flex;
     flex-direction: column;
-    height: 40rem;
-    gap: 1rem;
+    width: 94.4rem;
+    height: 39.3rem;
+    gap: 0.75rem;
 }
 .appointment-card {
     border-radius: 0.9375rem;
-    border: 1px solid rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     background: #FFF;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
-    padding: 1rem;
+    padding: 1.1rem 1.5rem 1.1rem 1.5rem;
     display: flex;
     flex-direction: row;
-    gap: 40.5rem;
+    gap: 1rem;
     justify-content: space-between;
-    width: 94%;
+    align-items: center;
 }
 .information {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.3rem;
+    display: grid;
+    grid-template-columns: 8rem 17rem 19rem 6rem 7rem;
+    gap: 1rem;
+    align-items: center;
 }
 .information-title {
     margin: 0;
     font-weight: 600;
+    white-space: nowrap;
 }
 .content {
+    font-size: 1.25rem;
+    color: #181818;
     font-weight: 400;
 }
 .content1 {
     font-weight: 400;
+    font-size: 1.25rem;
     color: #DE7C21;
+}
+.button-icon {
+    width: 23px;
+    height: 23px;
 }
 .buttons-container {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     gap: 1rem;
 }
 .done-button {
-    border-radius: 0.3125rem;
+    border-radius: 0.4rem;
     background: #56AB00;
-    width: 7rem;
-    height: 1.5rem;
+    width: 6rem;
+    height: 2.5rem;
     color: #FFF;
     text-align: center;
     font-size: 1rem;
@@ -110,15 +119,21 @@ input#search-bar{
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+    gap: 0.15rem;
 }
 .done-button:hover {
     background: #6ecf00;
 }
 .reschedule-button {
-    border-radius: 0.3125rem;
+    border-radius: 0.4rem;
     background: #0A569C;
-    width: 7rem;
-    height: 1.5rem;
+    width: 9rem;
+    height: 2.5rem;
     color: #FFF;
     text-align: center;
     font-size: 1rem;
@@ -126,15 +141,21 @@ input#search-bar{
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.75rem;
+    gap: 0.15rem;
 }
 .reschedule-button:hover {
     background: #0a6fc0;
 }
 .cancel-button {
-    border-radius: 0.3125rem;
+    border-radius: 0.4rem;
     background: #E84545;
-    width: 7rem;
-    height: 1.5rem;
+    width: 6rem;
+    height: 2.5rem;
     color: #FFF;
     text-align: center;
     font-size: 1rem;
@@ -142,13 +163,17 @@ input#search-bar{
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+    gap: 0.15rem;
 }
 .cancel-button:hover {
     background: #ff5b5b;
 }
 .view-button {
-    width: 7rem;
-    height: 1.5rem;
     color: #0A7F9C;
     background-color: white;
     text-align: center;
@@ -167,6 +192,7 @@ input#search-bar{
     align-items: center;
     gap: 2rem;
     margin-left: 79rem;
+    margin-top: 0.9rem;
 }
 .pagination-button-container {
     display: flex;
@@ -177,6 +203,7 @@ input#search-bar{
 .page-indicator {
     font-size: 1.25rem;
     font-weight: 400;
+    margin: 0;
 }
 .previous-button {
     border-radius: 0.625rem;
@@ -243,16 +270,19 @@ input#search-bar{
     background-color: #fefefe;
     border-radius: 0.25rem;
     padding: 1rem;
-    width: 50%;
+    width: 25%;
     margin: 15% auto;
 }
 .modal-title {
     margin: 0;
+    font-size: 1.5rem;
+    color: #0A7F9C;
 }
 .modal-body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 0.75rem;
 }
 .modal-body p {
     margin: 0;
@@ -262,6 +292,10 @@ input#search-bar{
     float: right;
     font-size: 28px;
     font-weight: bold;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 .close:hover,
 .close:focus {
@@ -402,4 +436,7 @@ input#search-bar{
     background-color: #00000000;
     border: none;
     cursor: pointer;
+}
+.label-bold {
+    font-weight: bold;
 }

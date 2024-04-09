@@ -85,7 +85,7 @@ class AppointmentListController extends Controller
         return redirect()->back();
     }
     public function loadAppointmentManagerData(Request $request) {
-        $perPage = 4;
+        $perPage = 7;
         $searchQuery = $request->query('search');
         $appointmentList = Appointment::with(['scheduleDate.timeSlot', 'service', 'user.userInformation'])
                                     ->join('schedule_dates', 'appointments.schedule_id', '=', 'schedule_dates.id')
