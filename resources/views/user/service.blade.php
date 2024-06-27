@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <div class="service-title-section-container">
@@ -38,7 +38,7 @@
 </div>
 @endsection
 @section('css')
-    <link href="{{ asset('css/service.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user/service.css') }}" rel="stylesheet">
 @endsection
 @section('js')
     <script>

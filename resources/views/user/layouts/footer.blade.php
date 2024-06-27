@@ -1,13 +1,13 @@
 <footer class="footer">
     <div class="footer-menu-container">
-        <a href="{{ route('index')}}">Home</a>
-        <a href="{{ route('about')}}">About</a>
-        <a href="{{ route('service')}}">Services</a>
-        <a href="{{ route('contact')}}">Contacts</a>
+        <a class="footer-home-link" href="{{ route('index')}}">Home</a>
+        <a class="footer-about-link" href="{{ route('about')}}">About</a>
+        <a class="footer-services-link" href="{{ route('service')}}">Services</a>
+        <a class="footer-contacts-link" href="{{ route('contact')}}">Contacts</a>
     </div>
     <div class="footer-logo-container">
         <img class="footer-website-logo" src="{{ asset('img/Logo.svg')}}" alt="">
-        <p class="copyright">© 2023  Donna Mae Jorge-Hollman Dental Clinic. All rights reserved.</p>
+        <p class="copyright">© 2023 Donna Mae Jorge-Hollman Dental Clinic. All rights reserved.</p>
     </div>
     <div class="footer-contacts-container">
         <div class="contact-footer-container">
@@ -26,3 +26,4 @@
         </div>
     </div>
 </footer>
+<link href="{{ asset('css/user/layouts/footer.css') }}" rel="stylesheet">

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <div class="progress-bar-container">

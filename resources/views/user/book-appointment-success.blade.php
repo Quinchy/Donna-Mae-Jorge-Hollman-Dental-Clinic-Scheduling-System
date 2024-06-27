@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <div class="appointment-card-container">
@@ -12,5 +12,5 @@
 </div>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/book-appointment-success.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user/book-appointment-success.css') }}">
 @endsectionD

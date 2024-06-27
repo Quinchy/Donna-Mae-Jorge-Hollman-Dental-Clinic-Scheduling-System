@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <div class="intro-container">
@@ -73,5 +73,5 @@
 </div>
 @endsection
 @section('css')
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user/home.css') }}" rel="stylesheet">
 @endsection

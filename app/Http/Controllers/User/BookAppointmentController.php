@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ScheduleDate;
 use App\Models\TimeSlot;
@@ -12,6 +13,10 @@ use Carbon\Carbon;
 
 class BookAppointmentController extends Controller
 {
+    public function bookAppointmentSuccess()
+    {
+        return view('user.book-appointment-success');
+    }
     public function submitAppointment(Request $request) {
         // Validate request data
         $customMessages = [

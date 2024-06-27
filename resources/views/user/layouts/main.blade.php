@@ -14,12 +14,12 @@
         @yield('css')
     </head>
     <body>
-        @include('layouts.background')
-        @include('layouts.navbar')
+        @include('user.layouts.background')
+        @include('user.layouts.navbar')
         <div class="wholepage-container">
             @yield('content')
         </div>
-        @include('layouts.footer')
+        @include('user.layouts.footer')
         @yield('js')
     </body>
 </html>

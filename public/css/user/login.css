@@ -1,0 +1,305 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 11rem 0 11rem 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 38rem;
+    height: 40rem;
+    gap: 1rem;
+    border-radius: 1rem;
+    flex-shrink: 0;
+    background: var(--light-color);
+    box-shadow: 0px 0px 10px 2px var(--shadow-color);
+}
+
+.login-heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-title {
+    margin: 0;
+    font-size: 1.875rem;
+    font-weight: 900;
+    color: var(--dark-primary-color);
+}
+
+.login-description {
+    margin: 0;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.register-link {
+    color: var(--primary-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.register-link:hover {
+    color: var(--highlight-secondary-color);
+}
+
+.login-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.warning-text {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--warning-color);
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.email-title {
+    font-weight: 700;
+    color: var(--dark-primary-color);
+}
+
+.email-textfield {
+    width: 23.7rem;
+    height: 2.5rem;
+    padding-right: 2.6rem;
+    padding-left: 1rem;
+    font-size: 0.85rem;
+    color: var(--dark-primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.email-textfield:focus {
+    outline-color: var(--dark-primary-color);
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.password-title {
+    font-weight: 700;
+    color: var(--dark-primary-color);
+}
+
+.password-textfield {
+    width: 23.7rem;
+    height: 2.5rem;
+    padding-right: 2.6rem;
+    padding-left: 1rem;
+    font-size: 0.85rem;
+    color: var(--dark-primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.password-textfield:focus {
+    outline-color: var(--dark-primary-color);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.eye-open, .eye-closed {
+    width: 20px;
+    height: 20px;
+}
+
+.eye-closed {
+    display: none;
+}
+
+.login-button {
+    width: 27.5rem;
+    height: 2.7rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: var(--light-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.login-button:hover {
+    background: var(--highlight-secondary-color);
+}
+
+.login-button:focus {
+    background-color: var(--dark-primary-color);
+}
+
+.separator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.line {
+    width: 9rem;
+    height: 1px;
+    background-color: var(--secondary-color);
+}
+
+.separator-text {
+    color: var(--secondary-color);
+}
+
+.google-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 27.2rem;
+    height: 2.5rem;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    border: 1px solid var(--primary-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.google-logo-container {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+}
+
+.google-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.google-logo.highlighted {
+    opacity: 0;
+}
+
+.google-button:hover .google-logo.normal {
+    opacity: 0;
+}
+
+.google-button:hover .google-logo.highlighted {
+    opacity: 1;
+}
+
+.google-logo-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 1px 0 0 0;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.google-button:hover {
+    border-color: var(--highlight-secondary-color);
+}
+
+.google-button:hover .google-logo-text {
+    color: var(--highlight-secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        margin: 6rem 0 11rem 0;
+    }
+
+    .login-container {
+        width: 22rem;
+        height: 32rem;
+        border-radius: 0.5rem;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
+
+    .login-description {
+        font-size: 0.875rem;
+        margin: 0 4rem 0 4rem;
+    }
+
+    .register-link {
+        font-size: 0.875rem;
+    }
+
+    .login-section-container {
+        gap: 1rem;
+    }
+
+    .login-form-container {
+        gap: 1rem;
+    }
+
+    .email-title,
+    .password-title {
+        font-size: 0.875rem;
+    }
+
+    .email-textfield,
+    .password-textfield {
+        width: 15.2rem;
+        font-size: 0.875rem;
+    }
+
+    .separator-text {
+        font-size: 0.875rem;
+    }
+
+    .line {
+        width: 5.3rem;
+    }
+
+    .login-button {
+        width: 19rem;
+        font-size: 0.875rem;
+    }
+
+    .google-button {
+        width: 19rem;
+    }
+
+    .google-logo {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .google-logo-text {
+        font-size: 0.875rem;
+    }
+}

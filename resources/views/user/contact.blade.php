@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <h1 class="contact-title">CONTACT US</h1>
@@ -38,5 +38,5 @@
 </div>
 @endsection
 @section('css')
-    <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user/contact.css') }}" rel="stylesheet">
 @endsection
