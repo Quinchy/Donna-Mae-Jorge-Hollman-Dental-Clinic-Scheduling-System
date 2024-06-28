@@ -1,4 +1,5 @@
 @extends('user.layouts.main')
+
 @section('content')
 <div class="main-container">
     <div class="progress-bar-container">
@@ -41,6 +42,7 @@
     </div>
 </div>
 @endsection
+
 @section('css')
 <link href="{{ asset('css/user/registration/register3.css') }}" rel="stylesheet">
 @endsection

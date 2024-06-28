@@ -1,4 +1,5 @@
 @extends('user.layouts.main')
+
 @section('content')
 <div class="main-container">
     <div class="login-container">
@@ -45,26 +46,12 @@
         </div>
     </div>
 </div>
+
 @endsection
 @section('css')
     <link href="{{ asset('css/user/login.css') }}" rel="stylesheet">
 @endsection
+
 @section('js')
-<script>
-    function togglePasswordVisibility(fieldId, icon) {
-    var passwordInput = document.getElementById(fieldId);
-    var isOpenEye = icon.querySelector('.eye-open');
-    var isClosedEye = icon.querySelector('.eye-closed');
-    
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        isOpenEye.style.display = 'none';
-        isClosedEye.style.display = 'block';
-    } else {
-        passwordInput.type = 'password';
-        isOpenEye.style.display = 'block';
-        isClosedEye.style.display = 'none';
-    }
-}
-</script>
+<script src="{{ asset('js/user/login.js') }}"></script>
 @endsection

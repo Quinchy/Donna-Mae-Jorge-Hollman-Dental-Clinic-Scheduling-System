@@ -2,7 +2,7 @@ var lastScrollTop = 0;
 
 document.addEventListener('scroll', function() {
     var line = document.querySelector('.line');
-    var firstSection = document.querySelector('.about-first-section-container');
+    var firstSection = document.querySelector('.service-first-section-container');
     var lineBottom = line.getBoundingClientRect().bottom;
     var firstSectionTop = firstSection.getBoundingClientRect().top;
     var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
