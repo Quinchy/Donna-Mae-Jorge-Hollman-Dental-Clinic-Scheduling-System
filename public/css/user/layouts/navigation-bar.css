@@ -58,7 +58,7 @@
 
 .title {
     margin: 0;
-    font-family: 'Roboto Condensed';
+    font-family: var(--primary-condensed-font);
     font-size: 1.25rem;
     font-variant: all-small-caps;
 }

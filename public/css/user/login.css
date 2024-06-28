@@ -13,11 +13,11 @@
     justify-content: center;
     width: 38rem;
     height: 40rem;
-    gap: 1rem;
+    gap: 2.5rem;
     border-radius: 1rem;
     flex-shrink: 0;
     background: var(--light-color);
-    box-shadow: 0px 0px 10px 2px var(--shadow-color);
+    box-shadow: 0px 0px 10px 2px var(--dark-shadow-color);
 }
 
 .login-heading-container {
@@ -37,7 +37,7 @@
 .login-description {
     margin: 0;
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--grey-primary-color);
 }
 
 .register-link {
@@ -46,7 +46,7 @@
 }
 
 .register-link:hover {
-    color: var(--highlight-secondary-color);
+    color: var(--highlight-color);
 }
 
 .login-section-container {
@@ -153,7 +153,7 @@
 }
 
 .login-button:hover {
-    background: var(--highlight-secondary-color);
+    background: var(--highlight-color);
 }
 
 .login-button:focus {
@@ -170,11 +170,11 @@
 .line {
     width: 9rem;
     height: 1px;
-    background-color: var(--secondary-color);
+    background-color: var(--grey-primary-color);
 }
 
 .separator-text {
-    color: var(--secondary-color);
+    color: var(--grey-primary-color);
 }
 
 .google-button {
@@ -227,11 +227,11 @@
 }
 
 .google-button:hover {
-    border-color: var(--highlight-secondary-color);
+    border-color: var(--highlight-color);
 }
 
 .google-button:hover .google-logo-text {
-    color: var(--highlight-secondary-color);
+    color: var(--highlight-color);
 }
 
 @media screen and (max-width: 768px) {

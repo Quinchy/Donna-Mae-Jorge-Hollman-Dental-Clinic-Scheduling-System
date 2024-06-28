@@ -1,4 +1,5 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
+
 @section('content')
 <div class="main-container">
     <div class="progress-bar-container">
@@ -24,75 +25,27 @@
         <form class="register-form-container" method="POST" action="{{ route('register.verify-code') }}">
             @csrf
             <div class="verification-code-container">
-                <input class="verification-code-input" id="digit-1" name="digit-1" type="number" maxlength="1" oninput="moveToNext(this, 'digit-2')" autofocus>
-                <input class="verification-code-input" id="digit-2" name="digit-2" type="number" maxlength="1" oninput="moveToNext(this, 'digit-3')">
-                <input class="verification-code-input" id="digit-3" name="digit-3" type="number" maxlength="1" oninput="moveToNext(this, 'digit-4')">
-                <input class="verification-code-input" id="digit-4" name="digit-4" type="number" maxlength="1" oninput="moveToNext(this, 'digit-5')">
-                <input class="verification-code-input" id="digit-5" name="digit-5" type="number" maxlength="1" oninput="moveToNext(this, 'digit-6')">
-                <input class="verification-code-input" id="digit-6" name="digit-6" type="number" maxlength="1" oninput="moveToNext(this, null)">
+                <input class="verification-code-input" id="digit-1" name="digit-1" type="text" maxlength="1" oninput="moveToNext(this, 'digit-2')" autofocus>
+                <input class="verification-code-input" id="digit-2" name="digit-2" type="text" maxlength="1" oninput="moveToNext(this, 'digit-3')">
+                <input class="verification-code-input" id="digit-3" name="digit-3" type="text" maxlength="1" oninput="moveToNext(this, 'digit-4')">
+                <input class="verification-code-input" id="digit-4" name="digit-4" type="text" maxlength="1" oninput="moveToNext(this, 'digit-5')">
+                <input class="verification-code-input" id="digit-5" name="digit-5" type="text" maxlength="1" oninput="moveToNext(this, 'digit-6')">
+                <input class="verification-code-input" id="digit-6" name="digit-6" type="text" maxlength="1" oninput="moveToNext(this, null)">
             </div>
             <div class="button-container">
                 <button class="verify-button" type="submit">Verify</button>
-                <button class="resend-button" type="submit" onclick="resendCode()">Resend Verification</button>
+                <button class="resend-button" type="button" onclick="resendCode()" disabled>Resend Verification</button>
+                <p id="resend-timer" class="resend-timer"></p>
             </div>
         </form>        
     </div>
 </div>
 @endsection
+
 @section('css')
-<link href="{{ asset('css/register2.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user/registration/register2.css') }}" rel="stylesheet">
 @endsection
+
 @section('js')
-<script>
-function moveToNext(current, nextFieldId) {
-    if (current.value.length >= 1 && nextFieldId) {
-        document.getElementById(nextFieldId).focus();
-    }
-}
-function handlePaste(e) {
-    var pasteData = e.clipboardData.getData('text');
-    var inputs = document.querySelectorAll('.verification-code-input');
-    // Split the pasted data and fill the inputs
-    pasteData.split('').forEach((char, index) => {
-        if (index < inputs.length) {
-            inputs[index].value = char;
-        }
-    });
-    // Focus the next empty input field
-    for (var i = 0; i < inputs.length; i++) {
-        if (!inputs[i].value) {
-            inputs[i].focus();
-            break;
-        }
-    }
-    // Prevent the default paste action
-    e.preventDefault();
-}
-function resendCode() {
-    fetch("{{ route('register.resend-code') }}", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({})
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-}
-document.querySelectorAll('.verification-code-input').forEach((input, index, arr) => {
-    input.addEventListener('keydown', (e) => {
-        if (e.key === "Backspace" && input.value === '' && index !== 0) {
-            arr[index - 1].focus();
-        }
-    });
-    // Add paste event listener
-    input.addEventListener('paste', handlePaste);
-});
-</script>
+<script src="{{ asset('js/user/registration/register2.js') }}"></script>
 @endsection

@@ -43,28 +43,29 @@ class RegistrationController extends Controller
         Mail::to($request->email)->send(new VerificationCodeMail($verificationCode));
         return redirect()->route('register.step2');
     }
-    public function verifyCode(Request $request)
-    {
-        $this->validateVerificationCode($request);
-        $inputCode = $this->getInputCode($request);
-        $storedCode = Session::get('email_verification_code');
-        if ($inputCode === $storedCode) {
-            Session::forget('email_verification_code');
-            return redirect()->route('register.step3');
-        }
-        return redirect()->back()->withErrors(['code_mismatch' => 'The verification code does not match.']);
-    }
-    public function resendVerificationCode()
+    public function resendVerificationCode(Request $request)
     {
         $email = Session::get('registration.email');
         if (!$email) {
-            return redirect()->route('register.step1')->withErrors(['email_not_found' => 'Email not found. Please register again.']);
+            return response()->json(['error' => 'Email not found. Please register again.'], 400);
         }
+    
+        $lastSent = Session::get('last_verification_code_sent_time');
+        $cooldown = 60; // Cooldown time in seconds
+    
+        if ($lastSent && (time() - $lastSent) < $cooldown) {
+            $remaining = $cooldown - (time() - $lastSent);
+            return response()->json(['error' => 'Please wait ' . $remaining . ' seconds before requesting a new code.'], 429);
+        }
+    
         $verificationCode = $this->generateVerificationCode();
         Session::put('email_verification_code', $verificationCode);
+        Session::put('last_verification_code_sent_time', time());
         Mail::to($email)->send(new VerificationCodeMail($verificationCode));
-        return redirect()->back()->with('status', 'Verification code resent.');
+    
+        return response()->json(['success' => 'Verification code resent.'], 200);
     }
+    
     public function registerData(Request $request)
     {
         $this->validateRegisterDataStep3($request);
@@ -85,6 +86,26 @@ class RegistrationController extends Controller
             'email.unique' => 'The email address is already taken.'
         ]);
     }
+    public function verifyCode(Request $request)
+    {
+        $this->validateVerificationCode($request);
+        $inputCode = trim($this->getInputCode($request));
+        $storedCode = trim(Session::get('email_verification_code'));
+    
+        // Log the inputted code and the stored code for verification
+        Log::info('Inputted Verification Code: ' . $inputCode . ' (length: ' . strlen($inputCode) . ')');
+        Log::info('Stored Verification Code: ' . $storedCode . ' (length: ' . strlen($storedCode) . ')');
+    
+        // Check if codes match and handle redirection
+        if ($inputCode === $storedCode) {
+            Session::forget('email_verification_code');
+            Log::info('Verification successful. Redirecting to step 3.');
+            return redirect()->route('register.step3');
+        }
+    
+        Log::info('Verification failed. Codes do not match.');
+        return redirect()->back()->withErrors(['code_mismatch' => 'The verification code does not match.']);
+    }
     private function validateVerificationCode(Request $request)
     {
         $request->validate([
@@ -96,11 +117,12 @@ class RegistrationController extends Controller
             'digit-6' => 'required|digits:1',
         ]);
     }
+    
     private function getInputCode(Request $request)
     {
         return $request->input('digit-1') . $request->input('digit-2') . $request->input('digit-3') .
             $request->input('digit-4') . $request->input('digit-5') . $request->input('digit-6');
-    }
+    }    
     private function generateVerificationCode()
     {
         return rand(100000, 999999);

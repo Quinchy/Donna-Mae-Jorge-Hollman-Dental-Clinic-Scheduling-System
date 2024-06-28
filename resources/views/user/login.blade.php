@@ -9,13 +9,13 @@
         <div class="login-section-container">
             <form class="login-form-container" method="POST" action="{{ route('login.post')}}">
                 @csrf
-                <div class="warning-text">
-                    @if($errors->any())
+                @if($errors->any())
+                    <div class="warning-text">
                         @foreach ($errors->all() as $error)
                             <div>{{ $error }}</div>
                         @endforeach
-                    @endif
-                </div>
+                    </div>
+                @endif
                 <div class="email-container">
                     <label class="email-title" for="email">Email</label>
                     <input class="email-textfield" id="email" type="email" name="email" placeholder="Email" required>

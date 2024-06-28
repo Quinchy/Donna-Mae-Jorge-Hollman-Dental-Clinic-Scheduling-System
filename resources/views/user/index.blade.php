@@ -14,7 +14,7 @@
     </div>
     <div class="about-container" id="about-section">
         <div class="about-1-container">
-            <p class="about-title">Welcome to Donna Mae Jorge-Hollman Dental Clinic, where your smile is our top priority.</p>
+            <h1 class="about-title">Welcome to Donna Mae Jorge-Hollman Dental Clinic, where your smile is our top priority.</h1>
             <img src="{{ asset('img/Line-Decoration.png')}}" alt="">
         </div>
         <div class="about-2-container">

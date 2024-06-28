@@ -7,7 +7,7 @@
     gap: 10rem;
     padding-bottom: 2.5rem;
     border-top: 1px solid var(--light-color);
-    background: var(--background-color);
+    background: var(--dark-color);
 }
 
 .footer-menu-container {
@@ -48,6 +48,9 @@
 
 .copyright {
     margin: 0;
+    font-family: var(--primary-condensed-font);
+    font-size: 1.25rem;
+    font-variant: all-small-caps;
 }
 
 .footer-contacts-container {

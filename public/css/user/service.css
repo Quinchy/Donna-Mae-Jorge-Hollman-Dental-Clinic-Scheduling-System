@@ -13,11 +13,9 @@
 }
 .service-title {
     text-align: center;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.50);
+    text-shadow: 0px 4px 10px var(--dark-shadow-color);
     font-size: 12.5rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     font-variant: all-small-caps;
     letter-spacing: -0.375rem;
     margin: 0;
@@ -25,7 +23,7 @@
 .line {
     width: 0.125rem;
     height: 10.0625rem;
-    background: rgba(255, 255, 255, 0.50);
+    background: var(--white-shadow-color);
     transition: all 1s ease-in-out;
 }
 
@@ -38,8 +36,8 @@
 }
 .first-section-title {
     text-align: center;
-    color: #0A7F9C;
-    font-family: 'Roboto Condensed';
+    color: var(--primary-color);
+    font-family: var(--primary-condensed-font);
     font-size: 4rem;
     font-style: italic;
     font-weight: 600;
@@ -48,7 +46,7 @@
 }
 .first-section-subtitle {
     text-align: center;
-    line-height: 145%;
+    line-height: 150%;
     margin: 0;
 }
 .service-list-section-container {
@@ -60,8 +58,8 @@
 }
 .service-list-title {
     text-align: center;
-    font-family: 'Roboto Condensed';
-    color: #0A7F9C;
+    font-family: var(--primary-condensed-font);
+    color: var(--primary-color);
     font-size: 6rem;
     font-style: italic;
     font-weight: 600;
@@ -83,7 +81,7 @@
     gap: 2.5rem;
 }
 .service-image {
-    filter: drop-shadow(0px 0px 65px rgba(255, 255, 255, 0.25));
+    filter: drop-shadow(0px 0px 65px var(--white-shadow-color));
 }
 .service-cards-text-container {
     display: flex;
@@ -100,8 +98,8 @@
 
 }
 .service-card-title {
-    color: #0A7F9C;
-    font-family: 'Roboto Condensed';
+    color: var(--primary-color);
+    font-family: var(--primary-condensed-font);
     font-size: 3rem;
     font-style: normal;
     font-weight: 700;
@@ -129,7 +127,7 @@
     .line {
         width: 0.125rem;
         height: 10rem;
-        background: rgba(255, 255, 255, 0.50);
+        background: var(--white-shadow-color);
         transition: all 1s ease-in-out;
     }
     .service-first-section-container {

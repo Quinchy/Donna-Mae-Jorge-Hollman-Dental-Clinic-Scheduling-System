@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 @section('content')
 <div class="main-container">
     <div class="progress-bar-container">
@@ -13,13 +13,15 @@
     <div class="register-container">
         <div class="register-heading-container">
             <h1 class="register-title">PERSONAL DETAILS</h1>
-            <p class="register-description">Please provide your personal information below.</p>
+            <p class="register-description">Please provide the following information below.</p>
         </div>
-        <div class="warning-text">
-            @foreach ($errors->all() as $error)
-                <span>{{ $error }}</span><br>
-            @endforeach
-        </div>
+        @if ($errors->any())
+            <div class="warning-text">
+                @foreach ($errors->all() as $error)
+                    <span>{{ $error }}</span><br>
+                @endforeach
+            </div>
+        @endif
         <form class="register-form-container" method="POST" action="{{ route('register.step3.post') }}">
             @csrf
             <div class="first-name-container">
@@ -40,5 +42,5 @@
 </div>
 @endsection
 @section('css')
-<link href="{{ asset('css/register3.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user/registration/register3.css') }}" rel="stylesheet">
 @endsection

@@ -13,7 +13,7 @@
     z-index: -99;
     width: 1920px;
     height: 1091px;
-    background: linear-gradient(180deg, var(--transparent-color) 25%, var(--dark-primary-color) 80%, var(--background-color) 100%);
+    background: linear-gradient(180deg, var(--transparent-color) 25%, var(--dark-primary-color) 80%, var(--dark-color) 100%);
 }
 @media screen and (max-width: 768px) {
     .website-image {
