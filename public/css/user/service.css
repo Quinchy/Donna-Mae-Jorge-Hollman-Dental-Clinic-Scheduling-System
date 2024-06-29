@@ -24,7 +24,6 @@
     width: 0.125rem;
     height: 10.0625rem;
     background: var(--white-shadow-color);
-    transition: all 1s ease-in-out;
 }
 
 .service-first-section-container {

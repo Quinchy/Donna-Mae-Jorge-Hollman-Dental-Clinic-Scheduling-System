@@ -27,7 +27,6 @@
     width: 0.125rem;
     height: 10.0625rem;
     background: var(--white-shadow-color);
-    transition: all 1s ease-in-out;
 }
 
 .about-first-section-container {
@@ -180,14 +179,7 @@
         font-size: 5rem;
         letter-spacing: -0.1rem;
     }
-
-    .line {
-        width: 0.125rem;
-        height: 10rem;
-        background: var(--white-shadow-color);
-        transition: all 1s ease-in-out;
-    }
-
+    
     .about-first-section-container {
         gap: 2rem;
         margin-top: 15rem;

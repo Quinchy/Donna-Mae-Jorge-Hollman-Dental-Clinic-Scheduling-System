@@ -14,7 +14,7 @@ class MyAccountController extends Controller
         // Load the authenticated user along with their user information
         $user = auth()->user()->load('userInformation');
         // Return the account view with the user data
-        return view('user.account', compact('user'));
+        return view('user.my-account', compact('user'));
     }
     public function saveAccount(Request $request)
     {

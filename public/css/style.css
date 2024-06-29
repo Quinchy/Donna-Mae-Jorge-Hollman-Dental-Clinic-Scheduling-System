@@ -2,10 +2,12 @@
     /* Colors */
     --light-primary-color: #a3dae9;
     --primary-color: #0a7f9c;
+    --light-grey-primary-color: #8bbfcc;
     --grey-primary-color: #618892;
     --dark-primary-color: #04303b;
     --dark-color: #031317;
     --light-color: #fffafa;
+    --light-highlight-color: #cddfe4;
     --dark-shadow-color: #031317bf;
     --white-shadow-color: #fffafa40;
     --white-shadow-highlights-color: #fffafa80;

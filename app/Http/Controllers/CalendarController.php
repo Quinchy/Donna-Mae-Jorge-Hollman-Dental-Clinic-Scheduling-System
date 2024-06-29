@@ -10,42 +10,52 @@ use Illuminate\Support\Facades\Route;
 class CalendarController extends Controller
 {
     public function fetchAppointmentTimeSlots(Request $request) {
-        $date = $request->input('date');
-        $availableTimeSlots = [];
-        $bookedTimeSlots = [];
-        $scheduleDates = DB::table('schedule_dates')
-                        ->where('appointment_date', $date)
-                        ->where('booked', false) 
-                        ->orderBy('time_slots_id', 'asc')
-                        ->get();
-        foreach ($scheduleDates as $scheduleDate) {
-            $timeSlot = DB::table('time_slots')
-                        ->where('id', $scheduleDate->time_slots_id)
-                        ->first();
-            if ($timeSlot) {
-                $formattedTime = \Carbon\Carbon::createFromFormat('H:i:s', $timeSlot->time_slot)->format('g:i A');
-                $availableTimeSlots[] = $formattedTime;
+        try {
+            $date = $request->input('date');
+            $availableTimeSlots = [];
+            $bookedTimeSlots = [];
+    
+            $scheduleDates = DB::table('schedule_dates')
+                ->where('appointment_date', $date)
+                ->where('booked', false)
+                ->orderBy('time_slots_id', 'asc')
+                ->get();
+    
+            foreach ($scheduleDates as $scheduleDate) {
+                $timeSlot = DB::table('time_slots')
+                    ->where('id', $scheduleDate->time_slots_id)
+                    ->first();
+                if ($timeSlot) {
+                    $formattedTime = \Carbon\Carbon::createFromFormat('H:i:s', $timeSlot->time_slot)->format('g:i A');
+                    $availableTimeSlots[] = $formattedTime;
+                }
             }
-        }
-        $scheduleTrueDates = DB::table('schedule_dates')
-                            ->where('appointment_date', $date)
-                            ->where('booked', true) 
-                            ->orderBy('time_slots_id', 'asc')
-                            ->get();
-        foreach ($scheduleTrueDates as $scheduleDate) {
-            $timeSlot = DB::table('time_slots')
-                        ->where('id', $scheduleDate->time_slots_id)
-                        ->first();
-            if ($timeSlot) {
-                $formattedTime = \Carbon\Carbon::createFromFormat('H:i:s', $timeSlot->time_slot)->format('g:i A');
-                $bookedTimeSlots[] = $formattedTime;
+    
+            $scheduleTrueDates = DB::table('schedule_dates')
+                ->where('appointment_date', $date)
+                ->where('booked', true)
+                ->orderBy('time_slots_id', 'asc')
+                ->get();
+    
+            foreach ($scheduleTrueDates as $scheduleDate) {
+                $timeSlot = DB::table('time_slots')
+                    ->where('id', $scheduleDate->time_slots_id)
+                    ->first();
+                if ($timeSlot) {
+                    $formattedTime = \Carbon\Carbon::createFromFormat('H:i:s', $timeSlot->time_slot)->format('g:i A');
+                    $bookedTimeSlots[] = $formattedTime;
+                }
             }
+    
+            return response()->json([
+                'availableTimeSlots' => $availableTimeSlots,
+                'bookedTimeSlots' => $bookedTimeSlots
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'An error occurred while fetching the time slots.'], 500);
         }
-        return response()->json([
-            'availableTimeSlots' => $availableTimeSlots,
-            'bookedTimeSlots' => $bookedTimeSlots
-        ]);
-    }    
+    }
+    
     public function loadAppointmentCalendar()
     {
         $startDate = now()->addDays(2);
@@ -62,7 +72,7 @@ class CalendarController extends Controller
         $routeToViewMap = [
             'admin.create-appointment' => 'admin.create-appointment',
             'admin.appointment-manager' => 'admin.appointment-manager',
-            'book-appointment' => 'book-appointment',
+            'book-appointment' => 'user.book-appointment',
             'admin.appointment-scheduler' => 'admin.appointment-scheduler',
             // Add more mappings as needed
         ];

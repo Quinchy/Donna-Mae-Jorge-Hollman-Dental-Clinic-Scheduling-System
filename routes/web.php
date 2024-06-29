@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/account/save', [MyAccountController::class, 'saveAccount'])->name('account.save');
     Route::post('/my-appointment/cancel-appointment/{appointmentId}', [MyAppointmentController::class, 'cancelAppointment'])->name('my-appointment.cancel');
     Route::post('/submit-appointment', [BookAppointmentController::class, 'submitAppointment']);
-    Route::post('/fetch-appointment-time-slots', [CalendarController::class, 'getAppointmentScheduleDates']);
+    Route::post('/fetch-appointment-time-slots', [CalendarController::class, 'fetchAppointmentTimeSlots']);
 });
 
 // Login and Registration Routes
@@ -88,15 +88,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('delete-time-slot', [AppointmentSchedulerController::class, 'deleteTimeSlot']);
         Route::post('fetch-time-slot', [AppointmentSchedulerController::class, 'fetchTimeSlots'])->name('fetch-time-slot');
         Route::post('add-time-slot', [AppointmentSchedulerController::class, 'addTimeSlot'])->name('add-time-slot');
-        Route::post('appointment-scheduler/fetch-appointment-time-slots', [CalendarController::class, 'getAppointmentScheduleDates']);
+        Route::post('appointment-scheduler/fetch-appointment-time-slots', [CalendarController::class, 'fetchAppointmentTimeSlots']);
         Route::post('appointment-request-manager/accept/{appointment}', [AppointmentRequestController::class, 'acceptAppointment'])->name('appointment-request-manager.accept');
         Route::post('appointment-request-manager/decline/{appointment}', [AppointmentRequestController::class, 'declineAppointment'])->name('appointment-request-manager.decline');
         Route::post('appointment-manager/done/{appointment}', [AppointmentListController::class, 'doneAppointment'])->name('appointment-manager.done');
         Route::post('appointment-manager/cancel/{appointment}', [AppointmentListController::class, 'cancelAppointment'])->name('appointment-manager.cancel');
-        Route::post('appointment-manager/fetch-appointment-time-slots', [CalendarController::class, 'getAppointmentScheduleDates'])->name('fetch-appointment-time-slots');
+        Route::post('appointment-manager/fetch-appointment-time-slots', [CalendarController::class, 'fetchAppointmentTimeSlots'])->name('fetch-appointment-time-slots');
         Route::post('appointment-manager/submit-reschedule', [AppointmentListController::class, 'submitReschedule'])->name('appointment-manager.submitReschedule');
         Route::post('appointment-history/delete/{appointment}', [AppointmentHistoryController::class, 'deleteAppointment'])->name('appointment-history.delete');
-        Route::post('create-appointment/fetch-appointment-time-slots', [CalendarController::class, 'getAppointmentScheduleDates']);
+        Route::post('create-appointment/fetch-appointment-time-slots', [CalendarController::class, 'fetchAppointmentTimeSlots']);
         Route::post('submit-created-appointment', [CreateAppointmentController::class, 'submitCreatedAppointment'])->name('submit-created-appointment');
     });
 });

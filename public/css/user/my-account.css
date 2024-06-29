@@ -7,12 +7,9 @@
 }
 .account-page-title {
     text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Roboto;
+    text-shadow: 0px 4px 4px var(--dark-shadow-color);
     font-size: 4rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     margin: 0;
 }
 .link-container {
@@ -26,12 +23,10 @@
     align-items: center;
     width: 15rem;
     height: 2.5rem;
-    border-radius: 0.3125rem;
-    background: #0A7F9C;
-    font-family: Roboto;
-    font-size: 1rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    box-shadow: 0px 0px 10px 2px var(--dark-shadow-color);
     font-weight: 700;
-    line-height: 140.625%;
     transition: all 0.2s ease-in-out;
 }
 .appointment-link {
@@ -40,23 +35,21 @@
     align-items: center;
     width: 15rem;
     height: 2.5rem;
-    border-radius: 0.3125rem;
-    background: #ffffff;
-    color: #0A7F9C;
-    font-family: Roboto;
-    font-size: 1rem;
+    border-radius: 0.5rem;
+    background: var(--light-color);
+    color: var(--primary-color);
+    box-shadow: 0px 0px 10px 2px var(--dark-shadow-color);
     font-weight: 700;
-    line-height: 140.625%;
     transition: all 0.2s ease-in-out;
 }
 .appointment-link:hover {
-    background: #d1e0e4;
+    background: var(--light-highlight-color);
 }
 .account-card-container {
-    color: black;
-    border-radius: 0.6375rem;
-    background: #F2F2F2;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.50);
+    color: var(--dark-color);
+    border-radius: 0.7rem;
+    background: var(--light-color);
+    box-shadow: 0px 0px 10px 2px var(--dark-shadow-color);
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -65,56 +58,10 @@
 }
 .account-title {
     margin: 0;
+    color: var(--dark-primary-color);
     text-align: center;
-    font-family: Roboto;
     font-size: 1.75rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: 140.625%; /* 2.8125rem */
-}
-.connection-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
-.connection-title {
-    margin: 0;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140.625%; /* 2.8125rem */
-}
-.connect-button:disabled {
-    color: #858585;
-    border: 2px solid #858585;
-    cursor: not-allowed;
-}
-.connect-button {
-    color: #0A7F9C;
-    background-color: #FFF;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.3125rem;
-    border: 2px solid #858585;
-    width: 15rem;
-    height: 3rem;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-.connect-button:not(:disabled) {
-    cursor: pointer;
-    border-color: #0A7F9C;
 }
 .information-container {
     display: flex;
@@ -125,47 +72,34 @@
 .account-data-title {
     margin: 0;
     text-align: center;
-    font-family: Roboto;
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: 140.625%; /* 2.8125rem */
-}
-.name-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
 }
 .input-container {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
-.input-label {
+.input-label, .phone-input-label {
     margin: 0;
-    color: #000000;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140.625%; /* 2.10938rem */
+    color: var(--dark-primary-color);
+    font-weight: 600;
 }
 .text-input {
     width: 23.7rem;
     height: 2.5rem;
-    border-radius: 0.3125rem;
-    border: 1px solid #0A7F9C;
-    font-family: 'Roboto';
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-color);
     font-size: 0.85rem;
     padding-right: 2.6rem;
     padding-left: 1rem;
 }
 .text-input:focus {
-    outline-color: #004f63;
+    outline-color: var(--dark-primary-color);
 }
 .text-input:disabled {
-    color: #858585;
-    border: 1px solid #858585;
+    color: var(--grey-primary-color);
+    border: 1px solid var(--grey-primary-color);
     cursor: not-allowed;
 }
 .text-input:not(:disabled) {
@@ -176,27 +110,17 @@
     flex-direction: column;
     gap: 0.25rem;
 }
-.phone-input-label {
-    margin: 0;
-    color: #000000;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140.625%; /* 2.10938rem */
-}
 .phone-text-input {
     width: 23.7rem;
     height: 2.5rem;
-    border-radius: 0.3125rem;
-    border: 1px solid #0A7F9C;
-    font-family: 'Roboto';
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-color);
     font-size: 0.85rem;
     padding-right: 2.6rem;
     padding-left: 1rem;
 }
 .phone-text-input:focus {
-    outline-color: #004f63;
+    outline-color: var(--dark-primary-color);
 }
 .save-container {
     display: flex;
@@ -208,55 +132,43 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    width: 10rem;
+    width: 15rem;
     height: 3rem;
-    border-radius: 0.3125rem;
-    background: #0A7F9C;
-    color: #FFF;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: var(--light-color);
     text-align: center;
-    font-family: 'Roboto';
-    font-size: 1rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: 140.625%;
     border: none;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 .save-button:hover {
-    background: #17a8cc;
+    background: var(--highlight-color);
 }
 .logout-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    width: 19.875rem;
-    height: 3.27519rem;
-    border-radius: 0.3125rem;
-    background: #0A7F9C;
-    color: #FFF;
+    gap: 0.25rem;
+    width: 20rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: var(--light-color);
     text-align: center;
-    font-family: Roboto;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140.625%;
-    border: none;
+    font-size: 1.25rem;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 .logout-button:hover {
-    background: #17a8cc;
+    background: var(--highlight-color);
 }
 .warning-text {
-    color: #FF0000;
+    color: var(--warning-color);
     text-align: center;
-    font-family: Roboto;
     font-size: 0.75rem;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     margin: 0;
 }
 
@@ -292,9 +204,6 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-    .account-data-title {
-        font-size: 1rem;
     }
     .name-container {
         flex-direction: column;
