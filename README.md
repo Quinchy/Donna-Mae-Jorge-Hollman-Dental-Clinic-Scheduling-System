@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://i.imgur.com/2EtlC1f.png">
-    <img src="https://i.imgur.com/6QGX8a7.png" alt="Logo">
+  <a href="https://i.imgur.com/5kLexq2.png">
+    <img src="https://i.imgur.com/5kLexq2.png" alt="Logo">
   </a>
 </div>
 
@@ -26,7 +26,7 @@ A Website for Donna Mae Jorge-Hollman Dental Clinic to fill an appointment as we
 
 ## Screenshots
 
-![Screenshot](https://i.imgur.com/50YhjDC.png)
-![Screenshot](https://i.imgur.com/wKoFZ26.png)
-![Screenshot](https://i.imgur.com/3NAkqpL.png)
-![Screenshot](https://i.imgur.com/ltRyv1v.png)
+![Screenshot](https://i.imgur.com/JwkbhVL.png)
+![Screenshot](https://i.imgur.com/qHy4qVd.png)
+![Screenshot](https://i.imgur.com/31mYm5in.png)
+![Screenshot](https://i.imgur.com/tKaD6c2.png)
