@@ -28,5 +28,5 @@ A Website for Donna Mae Jorge-Hollman Dental Clinic to fill an appointment as we
 
 ![Screenshot](https://i.imgur.com/JwkbhVL.png)
 ![Screenshot](https://i.imgur.com/qHy4qVd.png)
-![Screenshot](https://i.imgur.com/31mYm5in.png)
+![Screenshot](https://i.imgur.com/1mYm5in.png)
 ![Screenshot](https://i.imgur.com/tKaD6c2.png)
