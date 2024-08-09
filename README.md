@@ -10,7 +10,7 @@
 Donna Mae Jorge-Hollman Dental Clinic Appointment Scheduling System
 
 ### Description:
-A Website for Donna Mae Jorge-Hollman Dental Clinic to fill an appointment as well as an Admin-Side to set, manage, and delete appointments for the clinic.
+A Website to showcase and fill an appointment for Donna Mae Jorge-Hollman Dental Clinic as well as an Admin-Side to set, manage, and delete appointments for the clinic. The website is built using PHP Laravel, MySQL for database, and Heroku for Web Hosting.
 
 # Features
 
