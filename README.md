@@ -25,7 +25,7 @@ A Website to showcase and fill an appointment for Donna Mae Jorge-Hollman Dental
 • Appointment Management: Setting, Deleting, and Confirming (Admin)
 
 ## Screenshots
-
+Figma: https://www.figma.com/design/N9BVb8pjDRljXUPuV5QIRJ/Appointment-Scheduling-System?node-id=0-1&t=kdCmLE9xorFY8kUf-1
 ![Screenshot](https://i.imgur.com/JwkbhVL.png)
 ![Screenshot](https://i.imgur.com/qHy4qVd.png)
 ![Screenshot](https://i.imgur.com/1mYm5in.png)
